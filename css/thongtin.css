@@ -1,0 +1,352 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+  font-family: 'font';
+  src: url(../font/font.TTF);
+}
+@font-face {
+  font-family: 'bx';
+  src: url(../font/bx.TTF);
+}
+@font-face {
+  font-family: 'tintuc';
+  src: url(../font/tintuc.TTF);
+}
+.fw-js {
+	background-color: #f8b22c;
+}
+.php {
+	background-color: #3ca7f9;
+}
+.tooling {
+	background-color: #a96dca;
+}
+.js {
+	background-color: #e23237;
+}
+.java {
+	background-color: #ff9c36;
+}
+.c {
+	background-color: #0000ff;
+}
+.html-css {
+	background-color: linear-gradient(to left, #33ccff 0%, #ff0066 100%);
+}
+.row .nav {
+	padding: 20px;
+}
+.row .nav li {
+	padding-top: 20px;
+}
+.curr {
+	padding: 20px;
+}
+.curr .title {
+	font-size: 30px;
+}
+.curr .desc {
+	color: gray;
+}
+.nav li {
+ 	position: relative;
+}
+#goiy > ul li a{
+  color: white;
+}
+.sub-menu {
+	background: black;
+	border-radius: 20px;
+	display: none;
+	left: -20px;
+ 	position: absolute;
+	width: 200px;
+	z-index: 9999999999999999;
+}
+.sub-menu a {
+	color: white; 
+}
+.sub-menu a:hover {
+	color: lightblue; 
+}
+.icon {
+	padding: 5px;
+	position: absolute;
+}
+.active-pink-2 input[type=text]:focus:not([readonly]) {
+border: 1px solid #f48fb1;
+border-radius: 20px;
+box-shadow: 0 0 0 1px #f48fb1;
+transition: 1s;
+width: 310px;
+}
+.search{
+	padding-left: 25px;
+}
+#spinner { 
+	cursor: none; 
+	display: none; 
+	font-size: 18px;
+	position: absolute; 
+	right: 10px; 
+	top: 25px;
+}
+#goiy {
+  position: absolute; 
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+#goiy ul li{
+  list-style-type: none;
+  padding-left: 20px;
+}
+.ccc:hover .sub-menu {
+ 	display: flex;
+	margin-top: 20px;
+}
+.text-right a{
+	font-size: 16px;
+}
+.link {
+	background-color: #2b79e1;
+	color: white; 
+	padding: 15px;
+}
+.link div{
+	margin-left: 140px;
+}
+#khung1 {
+	background-color: #ff0066;
+	height: 400px;
+}
+.gioithieu {
+	color: white;
+	position: relative;
+	top: 50px;
+}
+.modau a{
+	color: white;
+	text-decoration: none;
+}
+.modau #title{
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 15px;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 5px;
+	text-align: center;
+	width: 150px;
+}
+.modau #title:hover{
+	background-color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.modau .chitiet i{
+	padding: 15px;
+}
+.phanmoi p{
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+	padding: 10px;
+	text-align: center;
+}
+.phanmoi p span{
+	color: blue;
+}
+.card {
+	padding: 5px;
+}
+.cauhoi > div {
+	padding: 20px;
+}
+.ask {
+	margin: auto;
+	text-align: left;
+	width: 400px;
+}
+.card {
+	margin: 20px;
+}
+/* The containerradio */
+.containerradio {
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  margin-bottom: 12px;
+  padding-left: 35px;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.containerradio input {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  background-color: #eee;
+  border-radius: 50%;
+  height: 25px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 25px;
+}
+
+/* On mouse-over, add a grey background color */
+.containerradio:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.containerradio input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  display: none;
+  position: absolute;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.containerradio input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.containerradio .checkmark:after {
+	background: white;
+	border-radius: 50%;
+	height: 8px;
+	left: 9px;
+ 	top: 9px;
+	width: 8px;
+}
+.button {
+	padding: 20px;
+}
+.button button{
+	border: none;
+	border-radius: 20px;
+	color: white;
+	margin: auto;
+	outline: none;
+	padding: 5px;
+	width: 300px;
+}
+footer {
+	background-color: #2b79e1;
+	color: white;
+	height: 700px;
+}
+.email {
+	margin: auto;
+	text-align: center;
+}
+.email p {
+	font-family: 'bx';
+	font-size: 30px;
+	margin-top: 20px;
+	text-align: center;
+	word-spacing: 3px;
+}
+.email .form {
+	margin-top: 50px;
+}
+.form form {
+	margin-right: 100px;
+}
+.input {
+	border: none;
+	border-radius: 15px;
+	margin-right: 130px;
+	margin-top: 30px;
+	outline: none;
+	padding: 5px 15px;
+	width: 300px;
+}
+.submit {
+	background-color: #08fff6;
+	border: none;
+	border-radius: 15px;
+	outline: none;
+	padding: 5px 15px;
+	position: relative;
+	right: 155px;
+}
+.submit:hover {
+	color: blue;
+	transition: 0.6s;
+}
+.code .name {
+	font-weight: bold;
+	margin: 20px;
+}
+.code .desc-footer {
+	font-size: 18px;
+}
+.iconsweb i{
+    font-size: 23px;
+    padding: 10px;
+}
+.fa-facebook-square:hover {
+    color: blue;
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: 0.7s;
+}
+.fa-youtube-play:hover {
+    color: red;
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: 0.7s;
+}
+.fa-twitter:hover {
+    color: #33ccff;
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: 0.7s;
+}
+.fa-github:hover {
+    color: black;
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: 0.7s;
+}
+.lienquan {
+	display: flex;
+	margin-left: 200px;
+}
+.lienquan div {
+	margin-left: 30px;
+}
+.lienquan div p a{
+	color: white;
+	opacity: 0.7;
+}
+.end p {
+	font-size: 13px;
+	opacity: 0.7;
+}
+.fa-heart {
+	color: white;
+}
+
+@media screen and (max-width: 564px) {
+	footer { height: 450px; }
+	.cc { display: none; }
+	.img img { bottom: 450px; margin: 0px; position: relative; width: 20%;}
+	.input { margin: 0px; }
+	.submit { position: absolute; right: 80px; }
+}

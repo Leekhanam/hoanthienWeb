@@ -1,0 +1,306 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+  font-family: 'font';
+  src: url(../font/font.TTF);
+}
+@font-face {
+  font-family: 'bx';
+  src: url(../font/bx.TTF);
+}
+@font-face {
+  font-family: 'tintuc';
+  src: url(../font/tintuc.TTF);
+}
+.moinhat {
+	margin-bottom: 100px;
+}
+.row .nav {
+	padding: 20px;
+}
+.row .nav li {
+	padding-top: 20px;
+}
+.curr {
+	padding: 20px;
+}
+.curr .title {
+	font-size: 30px;
+}
+.curr .desc {
+	color: gray;
+}
+.nav li {
+ 	position: relative;
+}
+#goiy > ul li a{
+  color: white;
+}
+.sub-menu {
+	background: black;
+	border-radius: 20px;
+	display: none;
+ 	position: absolute;
+	right: -100px;
+	z-index: 9999999999999999;
+}
+.sub-menu a {
+	color: white; 
+}
+.sub-menu a:hover {
+	color: lightblue; 
+}
+.icon {
+	padding: 5px;
+	position: absolute;
+}
+.active-pink-2 input[type=text]:focus:not([readonly]) {
+	border: 1px solid #f48fb1;
+	border-radius: 20px;
+	box-shadow: 0 0 0 1px #f48fb1;
+	transition: 1s;
+	width: 350px;
+}
+.search{
+	padding-left: 25px;
+}
+#spinner { 
+	cursor: none; 
+	display: none; 
+	font-size: 18px;
+	position: absolute; 
+	right: 10px; 
+	top: 25px;
+}
+#goiy {
+  position: absolute; 
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+#goiy ul li{
+  list-style-type: none;
+  padding-left: 20px;
+}
+.ccc:hover .sub-menu {
+ 	display: flex;
+	margin-top: 20px;
+}
+.text-right a{
+	font-size: 27px;
+}
+.allkhoahoc {
+ 	margin: auto;
+ 	margin-bottom: 50px;
+}
+.motkhoahoc {
+	margin-bottom: 50px;
+	background-color: white;
+	border-radius: 20px;
+	box-shadow: 0px 5px 5px 0px #f2f2f2;
+	height: 300px;
+}
+.motkhoahoc:hover p{
+	color: white;
+}
+.motkhoahoc:hover .play{
+	direction: 1s;
+	display: block;
+}
+.motkhoahoc:hover .danhmuc{
+	direction: 1s;
+	display: none;
+}
+.khoahoc {
+	background-color: #ff0066;
+	border-radius: 20px;
+	color: white;
+	height: 200px;
+}
+.laravel {
+	background-color: #ff0066;
+}
+.fw-js {
+	background-color: #f8b22c;
+}
+.php {
+	background-color: #3ca7f9;
+}
+.tooling {
+	background-color: #a96dca;
+}
+.js {
+	background-color: #e23237;
+}
+.java {
+	background-color: #ff9c36;
+}
+.c {
+	background-color: #0000ff;
+}
+.html-css {
+	background-color: linear-gradient(to left, #33ccff 0%, #ff0066 100%);
+}
+
+.khoahoc img {
+	padding: 15px;
+}
+.khoahoc h5 {
+	height: 20px;
+}
+.play {
+	background-color: white;
+	border: 1px solid white;
+	border-radius: 20px;
+	display: none;
+	font-weight: bold;
+	margin: auto;
+	padding: 5px;
+	position: relative;
+	top: 50px;
+	width: 180px;
+}
+.play a{
+	color: black;
+}
+.play:hover {
+	opacity: 0.7;
+	transition: 1s;
+}
+.danhmuc {
+	color: gray;
+	display: flex;
+}
+.danhmuc div {
+	width: 50%;
+}
+.important {
+  height: 100%;
+  transition: 1s;
+}
+.thongbao {
+	padding: 10px;
+}
+.lar {
+	padding: 10px;
+	text-align: right;
+}
+footer {
+	background-color: #2b79e1;
+	color: white;
+	height: 700px;
+}
+.email {
+	margin: auto;
+	text-align: center;
+}
+.email p {
+	font-family: 'bx';
+	font-size: 30px;
+	margin-top: 20px;
+	text-align: center;
+	word-spacing: 3px;
+}
+.email .form {
+	margin-top: 50px;
+}
+.form form {
+	margin-right: 100px;
+}
+.input {
+	border: none;
+	border-radius: 15px;
+	margin-right: 130px;
+	margin-top: 30px;
+	outline: none;
+	padding: 5px 15px;
+	width: 300px;
+}
+.submit {
+	background-color: #08fff6;
+	border: none;
+	border-radius: 15px;
+	outline: none;
+	padding: 5px 15px;
+	position: relative;
+	right: 155px;
+}
+.submit:hover {
+	color: blue;
+	transition: 0.6s;
+}
+.code .name {
+	font-weight: bold;
+	margin: 20px;
+}
+.code .desc-footer {
+	font-size: 18px;
+}
+.iconsweb i{
+    font-size: 23px;
+    padding: 10px;
+}
+.fa-facebook-square:hover {
+    color: blue;
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: 0.7s;
+}
+.fa-youtube-play:hover {
+    color: red;
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: 0.7s;
+}
+.fa-twitter:hover {
+    color: #33ccff;
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: 0.7s;
+}
+.fa-github:hover {
+    color: black;
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: 0.7s;
+}
+.lienquan {
+	display: flex;
+	margin-left: 200px;
+}
+.lienquan div {
+	margin-left: 30px;
+}
+.lienquan div p a{
+	color: white;
+	opacity: 0.7;
+}
+.end p {
+	font-size: 13px;
+	opacity: 0.7;
+}
+.fa-heart {
+	color: white;
+}
+@media screen and (max-width: 564px) {
+	footer { height: 450px; }
+	.cc { display: none; }
+	ul { margin: 20px; }
+	.active-pink-2 input[type=text]:focus:not([readonly]) {
+	border: 1px solid #f48fb1;
+	border-radius: 20px;
+	box-shadow: 0 0 0 1px #f48fb1;
+	transition: 1s;
+	width: 400px;
+	}
+	.active-pink-2 input[type=text] {
+	border: 1px solid #f48fb1;
+	border-radius: 20px;
+	box-shadow: 0 0 0 1px #f48fb1;
+	width: 400px;
+	}
+	.input { margin: 0px; }
+	.submit { position: absolute; right: 80px; }
+}

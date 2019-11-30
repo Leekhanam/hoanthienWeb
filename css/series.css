@@ -1,0 +1,481 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+  font-family: 'font';
+  src: url(../font/font.TTF);
+}
+@font-face {
+  font-family: 'bx';
+  src: url(../font/bx.TTF);
+}
+@font-face {
+  font-family: 'tintuc';
+  src: url(../font/tintuc.TTF);
+}
+.row .nav {
+	padding: 20px;
+}
+.row .nav li {
+	padding-top: 20px;
+}
+.curr {
+	padding: 20px;
+}
+.curr .title {
+	font-size: 30px;
+}
+.curr .desc {
+	color: gray;
+}
+.nav li {
+ 	position: relative;
+}
+#goiy > ul li a{
+  color: white;
+}
+.sub-menu {
+	background: black;
+	border-radius: 20px;
+	display: none;
+	left: -20px;
+ 	position: absolute;
+	width: 200px;
+	z-index: 9999999999999999;
+}
+.sub-menu a {
+	color: white; 
+}
+.sub-menu a:hover {
+	color: lightblue; 
+}
+.icon {
+	padding: 5px;
+	position: absolute;
+}
+.active-pink-2 input[type=text]:focus:not([readonly]) {
+border: 1px solid #f48fb1;
+border-radius: 20px;
+box-shadow: 0 0 0 1px #f48fb1;
+transition: 1s;
+width: 310px;
+}
+.search{
+	padding-left: 25px;
+}
+#spinner { 
+	cursor: none; 
+	display: none; 
+	font-size: 18px;
+	position: absolute; 
+	right: 10px; 
+	top: 25px;
+}
+#goiy {
+  position: absolute; 
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+#goiy ul li{
+  list-style-type: none;
+  padding-left: 20px;
+}
+.ccc:hover .sub-menu {
+ 	display: flex;
+	margin-top: 20px;
+}
+.text-right a{
+	font-size: 16px;
+}
+.link {
+	background-color: #2b79e1;
+	color: white; 
+	padding: 15px;
+}
+.link div{
+	margin-left: 150px;
+}
+section {
+	height: 600px;
+}
+aside {
+	float: left;
+	padding: 20px;
+	width: 30%;
+}
+#tieude {
+	padding: 10px;
+}
+.fa-bullhorn {
+	float: right;
+}
+#thediv_scroll{
+	background-color: white;
+	color: black;
+	height: 500px;
+	margin: 20px;
+	margin-left: 80px;
+	outline: none;
+	overflow: scroll; /* thuoc tinh nay lam xuat hien thanh cuon*/
+	padding: 5px 5px 5px 5px;
+	width: 300px;/* canh chinh noi dung va le the div*/
+}
+
+a .stt:hover {
+	background-color: lightgray;
+	opacity: 0.8;
+	transition: 0.8s;
+}
+a .number {
+	color: red;
+	padding: 5px;
+}
+.phongto {
+	position: relative;
+}
+.phongto button:hover {
+	font-weight: bold;
+}
+.phongto button {
+	background-color: rgba(255, 255, 255, 0.2);
+	border: 1px solid lightblue; 
+	color: white; 
+	margin-left: 40px;
+	outline: none;
+	padding: 7px;
+	position: absolute; 
+	z-index: 1;
+}
+article {
+	float: left;
+	padding: 40px;
+	width: 65%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  border-radius: 0 3px 3px 0;
+  color: white;
+  cursor: pointer;
+  height: 40px;
+  position: absolute;
+  top: 45%;
+  transition: 0.6s ease;
+  user-select: none;
+  width: 40px;
+}
+
+/* Position the "next button" to the right */
+.next {
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+.ad {
+	font-size: 14px;
+	padding: 15px;
+}
+.ad a{
+	background-color: white;
+	border-radius: 20px;
+	color: black;
+	padding: 10px;
+	text-decoration: none;
+}
+.ad a:hover {
+	border: 1px solid blue;
+	color: blue;
+}
+.commit .tacgia {
+	border-radius: 10px;
+	font-weight: bold;
+	padding: 15px;
+	text-transform: uppercase;
+}
+.commit .tuthuat {
+	margin: auto;
+}
+.tuthuat .xuatban {
+	opacity: 0.6;
+}
+.commnets 
+.media-object {
+  margin-right: 15px;
+}
+
+.commnets {
+  border: 1px solid #F7F7F0;
+  margin-bottom: 50px;
+  padding: 18px 18px 18px 0
+}
+
+.commnets .pull-left {
+  margin-right: 22px
+}
+
+.commnets p, 
+.response-area p, 
+.replay-box p {
+  font-size: 12px
+}
+
+.media-heading {
+  color: #363432;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 15px
+}
+
+.blog-socials {
+  margin-bottom: -9px;
+  margin-top: 14px;
+}
+
+.blog-socials ul {
+  float: left;
+  overflow: hidden;
+  padding-left: 0;
+}
+
+.blog-socials .btn.btn-primary{
+  margin-top: 0;
+}
+
+.blog-socials ul li {
+  
+  float: left;
+  height: 17px;
+  margin-right: 5px;
+  text-align: center;
+  width: 17px;
+}
+
+
+.blog-socials ul li a {
+  background:#F0F0E9;
+  color: #393B3B;
+  display: block;
+  font-size: 10px;
+  padding: 1px;
+}
+
+.blog-socials ul li a:hover {
+  background:#FE980F;
+  color: #fff
+}
+
+
+.media-list .btn-primary, 
+.commnets .btn-primary {
+  background:#FC9A11;
+  border: 0 none;
+  border-radius: 0;
+  color: #FFFFFF;
+  float: left;
+  font-size: 10px;
+  padding: 1px 7px;
+  text-transform: uppercase;
+}
+
+.response-area h2 {
+  color: #363432;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.response-area .media {
+  border: 1px solid #F7F7F0;
+  margin-bottom: 27px;
+  padding: 18px 18px 18px 0
+}
+
+.response-area .media img{
+  height: 70px;
+  width: 70px;
+}
+
+.response-area .media .pull-left {
+  margin-right: 25px
+}
+
+.response-area .second-media {
+  margin-left: 5%;
+  width: 95%;
+}
+
+
+.sinlge-post-meta {
+  margin-bottom: 15px;
+  overflow: hidden;
+  padding-left: 0
+}
+
+.sinlge-post-meta li {
+  background:#F0F0E9;
+  color: #363432;
+  float: left;
+  font-size: 10px;
+  font-weight: 700;
+  margin-right: 10px;
+  padding: 0 10px 0 0;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.sinlge-post-meta li i {
+  background:#FE980F;
+  color: #FFFFFF;
+  margin-right: 10px;
+  padding: 8px 10px;
+}
+
+.sinlge-post-meta li i:after {
+  border-width: 6px;
+  left: 27px;
+  top: 7px;
+}
+#binhluan,#loadcmt {
+	color: lightblue;
+	cursor: pointer;
+}
+.actbinhluan {
+	cursor: pointer;
+}
+
+#formrecmt {
+	display: none;
+}
+.act {
+	background-color: white;
+	border: none;
+}
+
+footer {
+	background-color: #2b79e1;
+	color: white;
+	height: 700px;
+}
+.email {
+	margin: auto;
+	text-align: center;
+}
+.email p {
+	font-family: 'bx';
+	font-size: 30px;
+	margin-top: 20px;
+	text-align: center;
+	word-spacing: 3px;
+}
+.email .form {
+	margin-top: 50px;
+}
+.form form {
+	margin-right: 100px;
+}
+.input {
+	border: none;
+	border-radius: 15px;
+	margin-right: 130px;
+	margin-top: 30px;
+	outline: none;
+	padding: 5px 15px;
+	width: 300px;
+}
+.submit {
+	background-color: #08fff6;
+	border: none;
+	border-radius: 15px;
+	outline: none;
+	padding: 5px 15px;
+	position: relative;
+	right: 155px;
+}
+.submit:hover {
+	color: blue;
+	transition: 0.6s;
+}
+.code .name {
+	font-weight: bold;
+	margin: 20px;
+}
+.code .desc-footer {
+	font-size: 18px;
+}
+.iconsweb i{
+    font-size: 23px;
+    padding: 10px;
+}
+.fa-facebook-square:hover {
+    color: blue;
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: 0.7s;
+}
+.fa-youtube-play:hover {
+    color: red;
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: 0.7s;
+}
+.fa-twitter:hover {
+    color: #33ccff;
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: 0.7s;
+}
+.fa-github:hover {
+    color: black;
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: 0.7s;
+}
+.lienquan {
+	display: flex;
+	margin-left: 200px;
+}
+.lienquan div {
+	margin-left: 30px;
+}
+.lienquan div p a{
+	color: white;
+	opacity: 0.7;
+}
+.end p {
+	font-size: 13px;
+	opacity: 0.7;
+}
+.fa-heart {
+	color: white;
+}
+@media screen and (max-width: 564px) {
+	footer { height: 450px; }
+	.cc { display: none; }
+	ul { margin: 20px; }
+	.active-pink-2 input[type=text]:focus:not([readonly]) {
+	border: 1px solid #f48fb1;
+	border-radius: 20px;
+	box-shadow: 0 0 0 1px #f48fb1;
+	transition: 1s;
+	width: 400px;
+	}
+	.active-pink-2 input[type=text] {
+	border: 1px solid #f48fb1;
+	border-radius: 20px;
+	box-shadow: 0 0 0 1px #f48fb1;
+	width: 400px;
+	}
+	.input { margin: 0px; }
+	.submit { position: absolute; right: 80px; }
+	.link div { margin: 0px; text-align: center;}
+	aside { display: none;}
+	article { margin: 0px; width: 100%; }
+	iframe { width: 100%; }
+	.next { right: 0px; }
+	.Comments { display: none; }
+}

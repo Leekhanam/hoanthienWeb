@@ -1,0 +1,366 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+  font-family: 'font';
+  src: url(../font/font.TTF);
+}
+@font-face {
+  font-family: 'bx';
+  src: url(../font/bx.TTF);
+}
+@font-face {
+  font-family: 'tintuc';
+  src: url(../font/tintuc.TTF);
+}
+.container .mid { 
+    font-size: 120px;
+    font-weight: bold;
+    text-align: center;
+}
+.mid p {
+    color: black;
+    font-family: 'font';
+    font-size: 60px;
+}
+.mid h1 {
+    color: black; 
+    font-family: 'bx';
+    font-size: 80px;
+    font-weight: bold;
+}
+.mid .flight {
+    animation: goFlight 10s ease;
+    animation-iteration-count: infinite;
+    color: black;
+    cursor: pointer;
+    font-size: 32px;
+    transform: rotate(430deg) translate(-200px, 200px);
+}
+.valid-feedback {
+    font-size: 27px;
+}
+@keyframes goFlight {
+    0%{
+        color: red;
+        transform: rotate(0deg) translate(-530px, -120px);
+    }
+    45%{
+        color: yellow;
+        transform: rotate(300deg) translate(305px, -140px);
+    }
+    70%{
+        color: blue;
+        transform: rotate(570deg) translate(0px, 0px);
+    }
+    100%{
+        transform: rotate(-370deg) translate(0px, 0px);
+    }
+}
+
+.mid button {
+    font-family: 'bx';
+    font-size: 25px;
+    outline: none;
+}
+.mid .but:hover{
+    margin-bottom: 15px;
+    transition: 0.5s;
+}
+/* Text Align */
+.text-l {
+    text-align: left;
+}
+.text-r {
+    text-align: right
+}
+.text-j {
+    text-align: justify;
+}
+
+/* Text Color */
+.text-whitesmoke {
+    color: black;
+}
+.text-darkyellow {
+    color: black;
+}
+
+/* Lines */
+
+.line-b {
+    border-bottom: 1px solid #FFEB3B !important;
+}
+
+/* Buttons */
+.button {
+    border-radius: 3px;
+}
+.form-button {
+    background-color: red;
+    border-color: rgba(255, 235, 59, 0.24);
+    color: black;
+}
+.form-button:hover,
+.form-button:focus,
+.form-button:active,
+.form-button.active,
+.form-button:active:focus,
+.form-button:active:hover,
+.form-button.active:hover,
+.form-button.active:focus {
+    border-color: rgba(255, 235, 59, 0.473);
+    color: #e6e6e6;
+    opacity: 0.7;
+}
+.button-l {
+    width: 100% !important;
+}
+
+/* Margins g(global) - l(left) - r(right) - t(top) - b(bottom) */
+
+.margin-g {
+    margin: 15px;
+}
+.margin-g-sm {
+    margin: 10px;
+}
+.margin-g-md {
+    margin: 20px;
+}
+.margin-g-lg {
+    margin: 30px;
+}
+
+.margin-l {
+    margin-left: 15px;
+}
+.margin-l-sm {
+    margin-left: 10px;
+}
+.margin-l-md {
+    margin-left: 20px;
+}
+.margin-l-lg {
+    margin-left: 30px;
+}
+
+.margin-r {
+    margin-right: 15px;
+}
+.margin-r-sm {
+    margin-right: 10px;
+}
+.margin-r-md {
+    margin-right: 20px;
+}
+.margin-r-lg {
+    margin-right: 30px;
+}
+
+.margin-t {
+    margin-top: 15px;
+}
+.margin-t-sm {
+    margin-top: 10px;
+}
+.margin-t-md {
+    margin-top: 20px;
+}
+.margin-t-lg {
+    margin-top: 30px;
+}
+
+.margin-b {
+    margin-bottom: 15px;
+}
+.margin-b-sm {
+    margin-bottom: 10px;
+}
+.margin-b-md {
+    margin-bottom: 20px;
+}
+.margin-b-lg {
+    margin-bottom: 30px;
+}
+
+/* Bootstrap Form Control Extension */
+
+.form-control,
+.border-line {
+    background-image: none;
+    border: 1px solid #424242;
+    border-radius: 1px;
+    color: inherit;
+    display: block;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+}
+.form-control:focus,
+.border-line:focus {
+    background-color: #616161;
+    border-color: #FFEB3B;
+    color: #e6e6e6;
+}
+.form-control,
+.form-control:focus {
+    box-shadow: none;
+}
+.form-control::-webkit-input-placeholder { color: #BDBDBD; }
+
+/* Container */
+
+.container-content {
+    border-color: #FFEB3B;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0;
+    color: inherit;
+    padding: 15px 20px 20px 20px;
+}
+
+/* Backgrounds */
+
+.main-bg {
+
+    background: #424242;
+    background: linear-gradient( #424242, #212121);
+}
+
+/* Login & Register Pages*/
+
+.login-container {
+    margin: 0 auto;
+    max-width: 400px;
+    padding-top: 100px;
+    z-index: 100;
+}
+.login.login-container {
+    width: 300px;
+}
+.wrapper.login-container {
+    margin-top: 140px;
+}
+.logo-badge {
+    color: #e6e6e6;
+    font-size: 80px;
+    font-weight: 800;
+    letter-spacing: -10px;
+    margin-bottom: 0;
+    text-align: center
+}
+.gioithieu {
+    color: black;
+}
+.lido {
+    font-size: 30px;
+    padding: 20px;
+    word-spacing: 3px;
+    word-wrap: break-word
+}
+.details img{
+    cursor: pointer;
+    width: 100%
+}
+.details img:hover{
+    transform: scale(1.2);
+    transition: 0.7s
+}
+.table-info {
+    color: black;
+    font-size: 20px;
+}
+.details p {
+    font-size: 20px;
+}
+.learn {
+    color: black;
+    display: none;
+    margin-top: 100px;
+}
+.learn > p {
+    font-size: 20px;
+}
+.learning {
+    padding: 50px;
+    }.noidung div{
+        margin-right: 40px;
+        padding: 10px
+    }
+    .learning .giaidap {
+        font-size: 18px;
+    }
+    .border,.border1,.border2,.border3 { 
+        background: #00ffff; 
+        border-radius: 50%; 
+        height: 50px; 
+        text-align: center;
+        width: 50px
+    }
+    .border {
+        margin-bottom: 110px;
+    }
+    .border1 {
+        margin-bottom: 120px;
+    }
+    .border2 {
+        margin-bottom: 190px;
+    }
+    .number {
+        color: black; 
+        font-size: 23px; 
+        position: relative; 
+        top: 5px
+    }
+    .mucdich {
+        color: black;
+        display: none;
+    }
+    .title {
+        font-size: 30px;
+    }
+    .desc {
+        font-size: 30px;
+        padding: 20px;
+        text-align: left;
+    }
+    .say {
+        font-size: 64px;
+    }
+    .name {
+        font-family: font;
+    }
+    .iconsweb i{
+        font-size: 20px;
+        padding: 10px;
+    }
+    .fa-facebook-square:hover {
+        color: blue;
+        cursor: pointer;
+        transform: rotate(360deg);
+        transition: 0.7s;
+    }
+    .fa-youtube-play:hover {
+        color: red;
+        cursor: pointer;
+        transform: rotate(360deg);
+        transition: 0.7s;
+    }
+    .fa-twitter:hover {
+        color: #33ccff;
+        cursor: pointer;
+        transform: rotate(360deg);
+        transition: 0.7s;
+    }
+    .back-to-top{
+        cursor: pointer;
+        font-size: 36px;
+    }
+    .success {
+        color: blue;
+    }
+    .error {
+        color: red;
+    }

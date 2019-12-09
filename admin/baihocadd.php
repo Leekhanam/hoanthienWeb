@@ -26,19 +26,10 @@
                         <label>Name</label>
                     </td>
                     <td>
-                        <input type="text" name="name_bh" placeholder="Nhập bài học..." class="medium" required="" />
+                        <input type="text" id="name_bh" name="name_bh" placeholder="Nhập bài học..." class="medium" required="" />
                     </td>
                 </tr>
 
-                <tr>
-                    <td>
-                        <label>Keyword</label>
-                    </td>
-                    <td>
-                        <input type="text" name="keyword" placeholder="Nhập keyword..." class="medium" required="" />
-                    </td>
-                </tr>
-            
                 <tr>
                     <td>
                         <label>Image</label>
@@ -76,6 +67,13 @@
                     <select name="status">
                         <option value="0">Chưa hoàn thành</option>
                         <option value="1">Hoàn thành</option>
+                    </select>
+                </tr>
+                <tr>
+                    <select name="loai">
+                        <option value="0">Kiến thức update</option>
+                        <option value="1">Kiến thức mới</option>
+                        <option value="2">Khác</option>
                     </select>
                 </tr>
 				<tr>

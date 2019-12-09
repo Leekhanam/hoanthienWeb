@@ -56,12 +56,12 @@
 	padding: 5px;
 	position: absolute;
 }
-.active-pink-2 input[type=text]:focus:not([readonly]) {
-	border: 1px solid #f48fb1;
+.active-pink-2 input[type=text]{
+	border: 1px solid lightblue;
 	border-radius: 20px;
-	box-shadow: 0 0 0 1px #f48fb1;
+	box-shadow: 0 0 0 1px lightblue;
 	transition: 1s;
-	width: 350px;
+	width: 500px;
 }
 .search{
 	padding-left: 25px;
@@ -96,6 +96,7 @@
  	margin-bottom: 50px;
 }
 .motkhoahoc {
+	cursor: pointer;
 	margin-bottom: 50px;
 	background-color: white;
 	border-radius: 20px;
@@ -118,30 +119,6 @@
 	border-radius: 20px;
 	color: white;
 	height: 200px;
-}
-.laravel {
-	background-color: #ff0066;
-}
-.fw-js {
-	background-color: #f8b22c;
-}
-.php {
-	background-color: #3ca7f9;
-}
-.tooling {
-	background-color: #a96dca;
-}
-.js {
-	background-color: #e23237;
-}
-.java {
-	background-color: #ff9c36;
-}
-.c {
-	background-color: #0000ff;
-}
-.html-css {
-	background-color: linear-gradient(to left, #33ccff 0%, #ff0066 100%);
 }
 
 .khoahoc img {
@@ -284,6 +261,195 @@ footer {
 .fa-heart {
 	color: white;
 }
+.PhaiDN button {
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+}
+/* Text Align */
+.text-l {
+    text-align: left;
+}
+.text-r {
+    text-align: right
+}
+.text-j {
+    text-align: justify;
+}
+
+/* Text Color */
+.text-whitesmoke {
+    color: black;
+}
+.text-darkyellow {
+    color: black;
+}
+
+/* Lines */
+
+.line-b {
+    border-bottom: 1px solid #FFEB3B !important;
+}
+
+/* Buttons */
+.button {
+    border-radius: 3px;
+}
+.form-button {
+    background-color: rgba(255, 235, 59, 0.8);
+    border-color: rgba(255, 235, 59, 0.24);
+    color: black;
+}
+.form-button:hover,
+.form-button:focus,
+.form-button:active,
+.form-button.active,
+.form-button:active:focus,
+.form-button:active:hover,
+.form-button.active:hover,
+.form-button.active:focus {
+    border-color: rgba(255, 235, 59, 0.473);
+    color: black;
+    opacity: 0.7;
+}
+.button-l {
+    width: 100% !important;
+}
+
+/* Margins g(global) - l(left) - r(right) - t(top) - b(bottom) */
+
+.margin-g {
+    margin: 15px;
+}
+.margin-g-sm {
+    margin: 10px;
+}
+.margin-g-md {
+    margin: 20px;
+}
+.margin-g-lg {
+    margin: 30px;
+}
+
+.margin-l {
+    margin-left: 15px;
+}
+.margin-l-sm {
+    margin-left: 10px;
+}
+.margin-l-md {
+    margin-left: 20px;
+}
+.margin-l-lg {
+    margin-left: 30px;
+}
+
+.margin-r {
+    margin-right: 15px;
+}
+.margin-r-sm {
+    margin-right: 10px;
+}
+.margin-r-md {
+    margin-right: 20px;
+}
+.margin-r-lg {
+    margin-right: 30px;
+}
+
+.margin-t {
+    margin-top: 15px;
+}
+.margin-t-sm {
+    margin-top: 10px;
+}
+.margin-t-md {
+    margin-top: 20px;
+}
+.margin-t-lg {
+    margin-top: 30px;
+}
+
+.margin-b {
+    margin-bottom: 15px;
+}
+.margin-b-sm {
+    margin-bottom: 10px;
+}
+.margin-b-md {
+    margin-bottom: 20px;
+}
+.margin-b-lg {
+    margin-bottom: 30px;
+}
+
+/* Bootstrap Form Control Extension */
+
+.dangnhap .form-control,
+.dangki .form-control,
+.border-line {
+    background-image: none;
+    border: 1px solid #424242;
+    border-radius: 1px;
+    color: inherit;
+    display: block;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+}
+.form-control:focus,
+.border-line:focus {
+    background-color: #616161;
+    border-color: #FFEB3B;
+    color: #e6e6e6;
+}
+.form-control,
+.form-control:focus {
+    box-shadow: none;
+}
+.form-control::-webkit-input-placeholder { color: #BDBDBD; }
+
+/* Container */
+
+.container-content {
+    border-color: #FFEB3B;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0;
+    color: inherit;
+    padding: 15px 20px 20px 20px;
+}
+
+/* Backgrounds */
+
+.main-bg {
+
+    background: #424242;
+    background: linear-gradient( #424242, #212121);
+}
+
+/* Login & Register Pages*/
+
+.login-container {
+    margin: 0 auto;
+    max-width: 400px;
+    padding-top: 100px;
+    z-index: 100;
+}
+.login.login-container {
+    width: 300px;
+}
+.wrapper.login-container {
+    margin-top: 140px;
+}
+.logo-badge {
+    color: #e6e6e6;
+    font-size: 80px;
+    font-weight: 800;
+    letter-spacing: -10px;
+    margin-bottom: 0;
+    text-align: center
+}
+
 @media screen and (max-width: 564px) {
 	footer { height: 450px; }
 	.cc { display: none; }

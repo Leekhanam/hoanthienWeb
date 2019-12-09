@@ -1,39 +1,34 @@
 <?php include 'inc/header.php'; ?>
-<link rel="stylesheet" type="text/css" href="css/khoahoc.css">
-<title>Code Club | Khóa Học</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<title>Code Club | Giới Thiệu</title>
 </head>
 <body>
-		<?php 
-			if (isset($_GET['id_kh'])) {
-				$id_kh = $_GET['id_kh'];
-			}
-	  		$get_edit_khoahoc = $kh->get_edit_khoahoc($id_kh);
-				if (isset($get_edit_khoahoc)) {
-					while ($resultkh = $get_edit_khoahoc->fetch_assoc()) {
-	  	?>
-	<header style="background-color: <?php echo $resultkh['mamau']; ?>;">
-		<div class="container">
-			<div class="row">
-				<?php include 'inc/nav.php'; ?>
-				<li class="nav-item khungsearch">
-					<!-- Search form -->
-					<form action="search.php" method="get" class="sear" autocomplete="off" 
-			        id="hdTutoForm">
-			        <div class="md-form active-pink active-pink-2 mb-3 mt-0">
-			          <span class="icon"><i class="fa fa-search"></i></span>
-			          <input class="form-control search" id="keywords" name="keywords" type="text" placeholder="Enter For Search" aria-label="Search">
-			          <a id="spinner" href=""><i class="fa fa-spinner fa-spin"></i></a>
-			        </div>
-			        <div id="goiy">
-			          <ul class="list-gpfrm" id="hdTuto_search"></ul>
-			        </div>
-			      </form>
-			</li>
-		</ul>
-	</div>
-	
-	<div class="row">
-		<div class="col-sm-12 dangnhap">
+    <div class="container">
+      <div class="row">
+            <?php include 'inc/nav.php'; ?>
+             <li class="nav-item">
+              <!-- Search form -->
+              <form action="search.php" method="get" class="sear" autocomplete="off" 
+              id="hdTutoForm">
+                <div class="md-form active-pink active-pink-2 mb-3 mt-0">
+                  <span class="icon"><i class="fa fa-search"></i></span>
+                <input class="form-control search" id="keywords" name="keywords" type="text" placeholder="Enter For Search" aria-label="Search">
+                <a id="spinner" href=""><i class="fa fa-spinner fa-spin"></i></a>
+              </div>
+                <div id="goiy">
+                                    <ul class="list-gpfrm" id="hdTuto_search"></ul>
+                                </div>
+              </form>
+            </li>
+        </ul>
+          <div class="mid col-sm-12 text-center">
+            <hr>
+            <p>Redefine education</p>
+            <h1>Học lập trình miễn phí cùng <a href="" class="align-content-stretch">Code Club</a></h1>
+            <p class="flight"><i class="fa fa-paper-plane-o"></i></p>         
+          </div>
+      </div>
+      <div class="col-sm-12 dangnhap">
         <!-- The Modal -->
         <div class="modal fade" id="dangnhap">
           <div class="modal-dialog">
@@ -209,104 +204,133 @@
     </div>
 </div>
 </div>
-		<div class="col-sm-5 daidien">
-			<img width="80%" src="admin/uploads/<?php echo $resultkh['image_kh']; ?>">
-		</div>
-		<div class="col-sm-7 gioithieu">
-			<h3>Hành trình của xuyên qua Code Club</h3>
-			<p>Hành trình là một hướng dẫn được đề xuất thông qua Code Club cho một kỹ năng nhất định. Mỗi phần cung cấp các mẹo và kỹ thuật mới dựa trên những gì bạn đã học. Điều đó nói rằng, hãy thoải mái để nhảy xung quanh khi bạn thấy phù hợp.</p>
-		</div>
-	</div>
-</div>
-</header>
 
-<article>
-	<div class="container">
-		<div class="row">
-      <div class="col-sm-12 dangnhap">
-      <!-- The Modal -->
-      <div class="modal fade" id="phaiDN">
-        <div class="modal-dialog">
-          <div class="modal-content">               
-            <div class="modal-header">
-              <h3 class="text-left btn border">Thông Báo!</h3>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-          <div class="container-content">
-              <h6 class="text-primary text-center">Bạn cần đăng nhập để xem bài học nhé 😁</h6>
-          </div>
-
-          <!-- Modal footer -->
-          <button type="button" id="delete" class="btn btn-success" data-dismiss="modal">OKE</button>
-          </div>
+<!-- Giới thiệu -->
+<div class="row gioithieu">
+    <div class="col-sm-12">
+        <div class="text-center">
+            <p>Đăng ký để nhận ngay khoá học lập trình hoàn toàn <strong class="alert-danger">MIỄN PHÍ.</strong></p>
         </div>
-      </div>
+        <div class="lido">
+            <p class="text-center">Tại sao bạn nên học tại <a href="" class="align-content-stretch">Code Club</a>?</p>
+            <p><a href="" class="align-content-stretch">Code Club</a> đang xây dựng một cộng đồng lập trình viên lớn nhất Việt Nam, nơi mọi người được học lập trình miễn phí, giúp đỡ nhau cả trong quá trình học cũng như đi làm.</p>
+        </div>
     </div>
-				<div class="col-sm-4 skill">
-					<img src="image/series-available-icon.svg" align="left">
-					<h5><?php echo $resultkh['name_kh']; ?> SKILL</h5>
-					<p><?php echo $resultkh['skill']; ?></p>
-				</div>
-			<?php }} ?>
-			<div class="col-sm-8 cot2">
-				<?php 
-					$get_chude_FE = $cd->get_chude_FE($id_kh);
-						if (isset($get_chude_FE)) {
-							while ($resultcd = $get_chude_FE->fetch_assoc()) {
-								$id_cd = $resultcd['id_cd'];
-				 ?>
-				<div class="text-center">
-					<p class="alert-secondary title"><?php echo $resultcd['name_cd']; ?></p>
-				</div>
-				<div class="row allkhoahoc">
-					<?php 
-						$get_baihoc_cd = $bh->get_baihoc_cd($id_cd);
-						if (isset($get_baihoc_cd)) {
-							while ($resultbh = $get_baihoc_cd->fetch_assoc()) {
-								$id_bh = $resultbh['id_bh'];
-					 ?>
-					<div class="col-sm-5 motkhoahoc" style="margin: 20px;">
-						<div class="text-center khoahoc" style="background-color: <?php echo $resultbh['mamau']; ?>">
-							<img width="60%" src="admin/uploads/<?php echo $resultbh['image']; ?>">
-							<h5><?php echo $resultbh['name_bh']; ?></h5>
-							<?php 
-              if (Session::get("id_tk")) {
-           ?>
-            <div class="play text-center">
-              <a href="series.php?id_bh=<?php echo $resultbh['id_bh']; ?>"><i class="fa fa-play-circle-o"> Play</i>
-              </a>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="float-right back-to-top" style="position: fixed; top: 550px; display: none;">
+             <i class="fa fa-caret-square-o-up animated infinite bounce"></i>
+         </div>
+     </div>
+ </div>
+ <div class="col-sm-12 d-flex text-center details">
+    <div class="col-sm-3">
+        <img src="image/gt1.svg">
+        <p class="table-info">Bắt đầu từ đâu?</p>
+        <p>Khó khăn đầu tiên ai cũng gặp phải khi học lập trình: Bắt đầu từ đâu? <a href="" class="align-content-stretch">Code Club</a> có 10 khoá học theo trình tự giúp bạn trở thành developer từ con số 0.</p>
+    </div>
+    <div class="col-sm-3">
+        <img src="image/gt2.svg">
+        <p class="table-info">Hỗ trợ 24/7</p>
+        <p>Nhóm chat trên Slack với hàng ngàn thành viên thân thiện giúp đỡ nhau giải quyết các bài tập khó gặp phải trong quá trình học.</p>
+    </div>
+    <div class="col-sm-3">
+        <img src="image/gt3.svg">
+        <p class="table-info">Học để đi làm</p>
+        <p>Các khoá học được cập nhật với các kiến thức mới nhất và ngắn nhất giúp bạn tự tin xin việc sau khi học xong.</p>
+    </div>
+    <div class="col-sm-3">
+        <img src="image/gt4.svg">
+        <p class="table-info">Khởi đầu suôn sẻ</p>
+        <p>Sau khi học xong các khoá học, bạn sẽ có cơ hội được giới thiệu tới các doanh nghiệp tại Việt Nam hoàn toàn miễn phí.</p>
+    </div>
+</div>
+</div>
+<div class="row learn animated flipInX slower">
+    <div class="col-sm-12">
+        <div class="text-center">
+            <h2>Bạn sẽ được học gì?</h2>
+        </div>
+        <div class="lido">
+            <p>Đến với cộng đồng <a href="" class="align-content-stretch">Code Club</a> không những bạn được học về lập trình miễn phí, bạn còn có cơ hội thực tập với những dự án thực tế, có cơ hội được giới thiệu tới các công ty lớn tại Việt Nam.</p>
+        </div>
+    </div>
+    <div class="col-sm-12 d-flex learning">
+        <div class="col-sm-1">
+            <div class="border0"><span class="number">1</span></div>
+            <div class="border1"><span class="number">2</span></div>
+            <div class="border2"><span class="number">3</span></div>
+            <div class="border3"><span class="number">4</span></div>
+        </div>
+        <div class="col-sm-5 noidung">
+            <div>
+                <p class="table-info">Học lập trình cơ bản</p>
+                <p class="giaidap">Bạn sẽ được làm quen với ngôn ngữ lập trình JavaScript, các ngôn ngữ khác phục vụ cho lập trình web như HTML, CSS.</p>
             </div>
-            <?php }else { ?>
-              <div class="play text-center PhaiDN">
-                <button type="button"><i class="fa fa-play-circle-o"> Play</i></button>
-              </div>
-              <?php
-              } ?>
-						</div>
-						<div class="danhmuc">
-							<div class="thongbao">
-								<?php 
-									$tong_video = $vd->tong_video($id_bh);
-									if (isset($tong_video)) {
-										while ($resulttotal = $tong_video->fetch_assoc()) {
-											Session::set('soluong',$resulttotal['soluong']);
-											?>
-								<p><i class="fa fa-code"></i> <?php echo $resulttotal['soluong']; ?> Lession</p>
-									<?php }} ?>
-								<p><i class="fa fa-clock-o"></i> <?php echo $resultbh['ngaytao']; ?></p>
-							</div>
-							<div class="lar">
-								<p align="right"><?php echo $resultbh['name_kh']; ?></p>
-							</div>
-						</div>
-					</div>
-					<?php }} ?>
-				</div>
-			<?php }} ?>
-			</div>
-		</div>
-	</div>
-</article>
-
+            <div>
+                <p class="table-info">Học lập trình nâng cao</p>
+                <p class="giaidap">Khoá học này bao gồm JavaScript nâng cao, các framework được sử dụng để lập trình cho front-end và back-end.</p>
+            </div>
+            <div>
+                <p class="table-info">Làm dự án</p>
+                <p class="giaidap">Sau khi học xong lập trình nâng cao, bạn sẽ được thực tập với một dự án nhỏ quy mô 1 dev, được người có kinh nghiệm hơn review code. Sau đó sẽ thực tập với các dự án lớn hơn, sát với công việc thực tế hơn và quy mô team lớn hơn.</p>
+            </div>
+            <div>
+                <p class="table-info">Học các kỹ năng để đi làm tại công ty</p>
+                <p class="giaidap">Trước khi vào các làm việc, các bạn sẽ được đào tạo các kĩ năng cơ bản để có thể thích nghi được với môi trường làm việc của một đất nước công nghiệp, những kĩ năng mà bạn thường không được học ở trường lớp.</p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <img src="image/editor.svg">
+        </div>
+    </div>
+</div>
+<div class="row text-center mucdich">
+    <div class="col-sm-12 table-bordered animated flipInX slower">
+        <p class="title">Mục đích của mình là gì?</p>
+        <p class="desc">Mình có một mong muốn là giúp những người nghèo ở khắp nơi trên thế giới, những người mà không có tiền mua máy tính, được học và làm quen với lập trình. Mình muốn định hướng cho các bạn trẻ thích học lập trình mà không biết bắt đầu từ đâu. Với tốc độ thay đổi công nghệ nhanh như hiện tại, càng nhiều lập trình viên giỏi thì thế giới càng phát triển nhanh hơn.</p>
+        <br>
+        <p class="say">“Stay hungry, stay foolish.”</p>
+        <h1 class="name">Steve Jobs</h1>
+        <h6>CEO — Apple Inc.</h6>
+        <div class="iconsweb">
+            <i class="fa fa-facebook-square"></i>
+            <i class="fa fa-youtube-play"></i>
+            <i class="fa fa-twitter"></i>
+        </div>
+        <div class="footer">
+            <p>Copyright © 2019 Codeclub.com</p>
+        </div>
+        
+    </div>
+</div>
+</div>
 <?php include 'inc/footer.php'; ?>
+<script>
+    $(document).ready(function(){
+        $(window).scroll(function(event) {
+          var pos_body = $('html,body').scrollTop();
+          if(pos_body>500){
+           $('.learn').show().addClass('animated zoomInDown fast');
+       }else{
+           $('.learn').hide(1000);
+       }
+       if(pos_body>1500){
+           $('.back-to-top').show(1000);
+           $('.mucdich').show(2000);
+       }else{
+           $('.back-to-top').hide(1000);
+           $('.mucdich').hide(2000);
+       }
+   });
 
+        $('.back-to-top').click(function(event) {
+            $('html,body').animate({scrollTop: 0},1400);
+        });
+
+    });
+    $(".custom-file-input").on("change", function() {
+      var fileName = $(this).val().split("\\").pop();
+      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  });
+</script>

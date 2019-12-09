@@ -54,12 +54,12 @@
 	padding: 5px;
 	position: absolute;
 }
-.active-pink-2 input[type=text]:focus:not([readonly]) {
-border: 1px solid #f48fb1;
-border-radius: 20px;
-box-shadow: 0 0 0 1px #f48fb1;
-transition: 1s;
-width: 310px;
+.active-pink-2 input[type=text]{
+	border: 1px solid lightblue;
+	border-radius: 20px;
+	box-shadow: 0 0 0 1px lightblue;
+	transition: 1s;
+	width: 500px;
 }
 .search{
 	padding-left: 25px;
@@ -96,6 +96,9 @@ width: 310px;
 }
 .link div{
 	margin-left: 150px;
+}
+.link div a{
+	color: white;
 }
 section {
 	height: 600px;

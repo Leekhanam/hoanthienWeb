@@ -2,6 +2,15 @@
     date_default_timezone_set('Asia/Ho_Chi_Minh');
 	include 'db.php';
 
+        if (isset($_POST['kh'])) {
+            $results = array();
+            $total = "SELECT name_kh FROM khoahoc";
+                    $kq = $connect->query($total);  
+                    foreach ($kq as $value) {
+                        echo $value['name_kh'].' ';
+                    }
+        }
+
         if (isset($_POST['id_video'])) {
             $id_video = $_POST['id_video'];
             $total = "SELECT COUNT(id_video) AS total FROM comment WHERE parent_cmt=0 AND id_video='$id_video'";

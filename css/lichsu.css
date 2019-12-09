@@ -109,133 +109,139 @@
 .link div{
 	margin-left: 140px;
 }
-#khung1 {
-	background-color: #ff0066;
-	height: 400px;
+#article {
+	margin-top: 100px;
+	width: 100%;
+	background-color: rgba(245, 245, 240);
 }
-.gioithieu {
-	color: white;
+#image-user{
 	position: relative;
-	top: 50px;
-}
-.modau a{
-	color: white;
-	text-decoration: none;
-}
-.modau #title{
-	background-color: rgba(0, 0, 0, 0.2);
-	border-radius: 15px;
-	font-size: 13px;
-	font-weight: bold;
-	padding: 5px;
+	bottom: 50px;
 	text-align: center;
-	width: 150px;
+	width: 100px;
+	height: 100px;
+	border: 2px solid black;
+	border-radius: 50%;
 }
-.modau #title:hover{
+#image-user{
+	text-align: left;
+	width: 130px;
+	height: 130px;
+	border: 10px solid white;
+	border-radius: 50%;
+}
+#thongtin{
+	position: relative;
+	bottom: 40px;
+}
+#thongtin a{
+	border: 1px solid black;
 	background-color: white;
-	background-color: rgba(0, 0, 0, 0.5);
+	padding: 10px 70px;
 }
-.modau .chitiet i{
+#thongtin a:hover{
+	transition: 0.5s;
+	background-color: black;
+	color: white;
+}
+#lichsu h1{
 	padding: 15px;
 }
-.phanmoi p{
-	border-left: 1px solid gray;
-	border-right: 1px solid gray;
-	padding: 10px;
-	text-align: center;
-}
-.phanmoi p span{
-	color: blue;
-}
-.card {
-	padding: 5px;
-}
-.cauhoi > div {
-	padding: 20px;
-}
-.ask {
-	margin: auto;
-	text-align: left;
-	width: 400px;
-}
-.card {
-	margin: 20px;
-}
-/* The containerradio */
-.containerradio {
-  cursor: pointer;
-  display: block;
-  font-size: 16px;
-  margin-bottom: 12px;
-  padding-left: 35px;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Hide the browser's default radio button */
-.containerradio input {
-  cursor: pointer;
-  opacity: 0;
-  position: absolute;
-}
-
-/* Create a custom radio button */
-.checkmark {
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
   background-color: #eee;
-  border-radius: 50%;
-  height: 25px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 25px;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  color: white;
+  border: none;
+  outline: none;
+  transition: 0.4s;
 }
 
-/* On mouse-over, add a grey background color */
-.containerradio:hover input ~ .checkmark {
+.pheptinh {
+	float: right;
+}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
   background-color: #ccc;
 }
 
-/* When the radio button is checked, add a blue background */
-.containerradio input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
-  content: "";
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
   display: none;
-  position: absolute;
+  overflow: hidden;
 }
-
-/* Show the indicator (dot/circle) when checked */
-.containerradio input:checked ~ .checkmark:after {
-  display: block;
+.allkhoahoc {
+ 	margin: auto;
+ 	margin-bottom: 50px;
 }
-
-/* Style the indicator (dot/circle) */
-.containerradio .checkmark:after {
-	background: white;
-	border-radius: 50%;
-	height: 8px;
-	left: 9px;
- 	top: 9px;
-	width: 8px;
+.motkhoahoc {
+	cursor: pointer;
+	margin-top: 20px;
+	background-color: white;
+	border-radius: 20px;
+	box-shadow: 0px 5px 5px 0px #f2f2f2;
+	height: 300px;
 }
-.button {
-	padding: 20px;
+.motkhoahoc:hover p{
+	color: white;
 }
-.button button{
-	border: none;
+.motkhoahoc:hover .play{
+	direction: 1s;
+	display: block;
+}
+.motkhoahoc:hover .danhmuc{
+	direction: 1s;
+	display: none;
+}
+.khoahoc {
+	background-color: #ff0066;
 	border-radius: 20px;
 	color: white;
-	margin: auto;
-	outline: none;
-	padding: 5px;
-	width: 300px;
+	height: 200px;
 }
+.khoahoc img {
+	padding: 15px;
+}
+.khoahoc h5 {
+	height: 20px;
+}
+.play {
+	background-color: white;
+	border: 1px solid white;
+	border-radius: 20px;
+	display: none;
+	font-weight: bold;
+	margin: auto;
+	padding: 5px;
+	position: relative;
+	top: 50px;
+	width: 180px;
+}
+.play a{
+	color: black;
+}
+.play:hover {
+	opacity: 0.7;
+	transition: 1s;
+}
+.danhmuc {
+	color: gray;
+}
+.important {
+  height: 100%;
+  transition: 1s;
+}
+.thongbao {
+	width: 100%;
+	padding: 10px;
+}
+
 footer {
 	background-color: #2b79e1;
 	color: white;

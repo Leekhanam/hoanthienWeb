@@ -38,15 +38,6 @@
                         <input type="text" name="name_bh" value="<?php echo $result['name_bh']; ?>" placeholder="Nhập bài học..." class="medium" />
                     </td>
                 </tr>
-
-                <tr>
-                    <td>
-                        <label>Keyword</label>
-                    </td>
-                    <td>
-                        <input type="text" name="keyword" value="<?php echo $result['keyword']; ?>" placeholder="Nhập keyword..." class="medium" required="" />
-                    </td>
-                </tr>
             
                 <tr>
                     <td>
@@ -84,12 +75,25 @@
                                 <?php }} ?>
                             </select></td>
                 </tr>
-                <select name="status">
+                <tr>
+                    <select name="status">
                         <option value="0">Chưa hoàn thành</option>
                         <option <?php if ($result['status'] == 1) {
                             echo "selected";
                         } ?> value="1">Hoàn thành</option>
                     </select>
+                </tr>
+                <tr>
+                    <select name="loai">
+                        <option value="0">Kiến thức update</option>
+                        <option <?php if ($result['loai'] == 1) {
+                            echo "selected";
+                        } ?> value="1">Kiến thức mới</option>
+                        <option <?php if ($result['loai'] == 2) {
+                            echo "selected";
+                        } ?> value="2">Khác</option>
+                    </select>
+                </tr>
 				<tr>
                     <td>
                         <input type="submit" name="submit" Value="Thay đổi" />

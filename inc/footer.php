@@ -87,7 +87,40 @@
 		$("#logo").mouseleave(function(){
 			$(this).removeClass('animated tada');
 	  });
-		});
+
+	$(".PhaiDN").click(function(){
+			$("#phaiDN").modal();
+	  });
+
+        $("#myBtn").click(function(){
+            $("#dangki").modal();
+        });
+
+        $("#myBtn").click(function(){
+            $("#dangnhap").modal();
+        });
+
+        $("#chuyenForm").click(function(){
+            $("#Sign").show(1000);
+            $("#signAuth").hide(1000);
+        });
+
+        $.ajax({
+            url: './admin/data/cmt.php',
+            type: 'POST',
+            data: {
+            kh: 1,
+            },
+            success: function(data){
+			// Tạo thành mảng với mỗi phần tử ngăn bởi khoảng trắng
+			// kết quả là mảng có hai phần tử gồm: welcome và feetuts.net
+			var data = data.split(" ");
+			data.shift();
+			data.pop();
+			  $('#keywords').placeholderTypewriter({text: data});
+            }
+ 		});
+});
 </script>
 <script src="./js/search.js" type="text/javascript"></script>
 </body>

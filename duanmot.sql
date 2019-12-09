@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 30, 2019 lúc 04:33 PM
+-- Thời gian đã tạo: Th12 09, 2019 lúc 06:49 AM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.3.11
 
@@ -30,12 +30,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `baihoc` (
   `id_bh` int(11) NOT NULL,
-  `name_bh` varchar(100) NOT NULL,
-  `keyword` text NOT NULL,
+  `name_bh` varchar(255) NOT NULL,
+  `keyword` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   `chuthich` text NOT NULL,
   `ngaytao` date NOT NULL,
   `status` int(11) NOT NULL DEFAULT 0,
+  `loai` int(11) NOT NULL DEFAULT 0,
   `id_cd` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -43,15 +44,16 @@ CREATE TABLE `baihoc` (
 -- Đang đổ dữ liệu cho bảng `baihoc`
 --
 
-INSERT INTO `baihoc` (`id_bh`, `name_bh`, `keyword`, `image`, `chuthich`, `ngaytao`, `status`, `id_cd`) VALUES
-(1, 'Eloquent Relationships', 'eloquent-relationships', 'rela.svg', 'Eloquent trong Laravel làm cho quá trình tương tác với các bảng cơ sở dữ liệu của bạn trở nên tự nhiên và trực quan nhất có thể. Điều quan trọng là bạn xác định và hiểu sáu loại mối quan hệ chính. Xem lại tất cả - một tập cho mỗi mối quan hệ.                                        ', '2019-11-15', 1, 1),
-(3, 'Laravel 5.7 From Scratch', 'laravel5.7-from-scratch', '7661.png', '\"Laravel From Scratch\" là một nguồn video dành cho những người mới đến với Laravel kể từ năm 2013. Xem xét điều này, như bạn có thể tưởng tượng, sự thật này đòi hỏi chúng ta phải liên tục làm mới loạt phim để đảm bảo nó luôn cập nhật nhất có thể. Để chào mừng sự ra mắt của Laravel 5.7, chúng tôi đã thực hiện lại. Mỗi video đã được ghi lại. Tất cả các kỹ thuật đã được tối ưu hóa. Mỗi ví dụ đã được cập nhật. Tôi hy vọng bạn thích nó!                    ', '2019-11-15', 1, 1),
-(5, 'Laravel 6 From Scratch', 'laravel6-from-scratch', '8193.svg', 'Trong loạt bài này, từng bước một, tôi sẽ chỉ cho bạn cách xây dựng các ứng dụng web với Laravel 6. Chúng ta sẽ bắt đầu với những điều cơ bản và dần dần đào sâu hơn, khi chúng ta xem xét các ví dụ. thực tế. Sau khi hoàn thành, bạn nên có tất cả các công cụ bạn cần. Bắt đầu nào!                    ', '2019-11-15', 0, 1),
-(6, 'Learn Vue 2: Step By Step', 'learn -vue2:-step-by-step', '3400.png', 'Khi bạn tiếp tục xây dựng các dự án mới, bạn sẽ thấy mình tiếp cận cùng một nhóm các thành phần nhiều lần. Hầu hết các trang web yêu cầu phương thức, thả xuống, chú giải công cụ, v.v. Mặc dù bạn chắc chắn có thể sử dụng khung UI, thay vào đó, hãy tìm hiểu cách xây dựng các thành phần này (và hơn thế nữa) từ đầu.                    ', '2019-11-15', 1, 3),
-(7, 'The PHP Practitioner', 'the-php-practitioner', '5062.webp', '<div>Tất cả chúng ta bắt đầu ở đâu đó. Khi nói đến phát triển web với PHP, tốt, điểm dừng đầu tiên của bạn là loạt bài này. Được thiết kế đặc biệt và dành riêng cho người mới bắt đầu, tại đây, bạn sẽ tìm hiểu các nguyên tắc cơ bản của PHP - tất cả các cách để xác định các biến và mảng.</div><div><br></div><div>Nếu bạn cảm thấy hơi không chuẩn bị cho nội dung tại Laracasts, loạt bài \"PHP cho người mới bắt đầu\" này sẽ là điểm dừng chân tiếp theo của bạn. Bài học mới được công bố vào thứ năm hàng tuần, vì vậy đừng tụt lại phía sau!</div>', '2019-11-15', 0, 2),
-(10, 'Javascript From Scratch', 'javascript-from-scratch', '6882.png', 'JavaScript, theo phiên bản hiện hành, là một ngôn ngữ lập trình thông dịch được phát triển từ các ý niệm nguyên mẫu. Ngôn ngữ này được dùng rộng rãi cho các trang web cũng như phía máy chủ.                    ', '2019-11-27', 0, 5),
-(11, 'CSS Tutorial for Beginners', 'css-tutorial-for-beginners', '5859.webp', 'Trong tin học, các tập tin định kiểu theo tầng – dịch từ tiếng Anh là Cascading Style Sheets – được dùng để miêu tả cách trình bày các tài liệu viết bằng ngôn ngữ HTML và XHTML. Ngoài ra ngôn ngữ định kiểu theo tầng cũng có thể dùng cho XML, SVG, XUL.                   ', '2019-11-27', 1, 6),
-(12, 'Build A Laravel App With TDD', 'build-a-laravel-app-with-tdd', '7973.svg', '<div>Đã đến lúc sử dụng các kỹ thuật mà chúng ta đã học được trong Laravel From Scratch và đưa chúng vào sử dụng tốt để xây dựng ứng dụng trong thế giới thực đầu tiên của bạn. Cùng nhau, chúng ta sẽ tận dụng TDD để tạo Birdboard : một ứng dụng quản lý dự án giống như Basecamp tối thiểu.</div><div><br></div><div>Sê-ri này sẽ cung cấp cho chúng tôi một loạt các cơ hội để kéo tay áo lên và kiểm tra sườn của chúng ta. Như mọi khi, chúng tôi bắt đầu từ đầu : laravel new birdboard.</div>                    ', '2019-11-28', 0, 7);
+INSERT INTO `baihoc` (`id_bh`, `name_bh`, `keyword`, `image`, `chuthich`, `ngaytao`, `status`, `loai`, `id_cd`) VALUES
+(1, 'Eloquent Relationships', 'eloquent-relationships', 'rela.svg', 'Eloquent trong Laravel làm cho quá trình tương tác với các bảng cơ sở dữ liệu của bạn trở nên tự nhiên và trực quan nhất có thể. Điều quan trọng là bạn xác định và hiểu sáu loại mối quan hệ chính. Xem lại tất cả - một tập cho mỗi mối quan hệ.                                        ', '2019-11-15', 1, 0, 1),
+(3, 'Laravel 5.7 From Scratch', 'laravel5.7-from-scratch', '7661.png', '\"Laravel From Scratch\" là một nguồn video dành cho những người mới đến với Laravel kể từ năm 2013. Xem xét điều này, như bạn có thể tưởng tượng, sự thật này đòi hỏi chúng ta phải liên tục làm mới loạt phim để đảm bảo nó luôn cập nhật nhất có thể. Để chào mừng sự ra mắt của Laravel 5.7, chúng tôi đã thực hiện lại. Mỗi video đã được ghi lại. Tất cả các kỹ thuật đã được tối ưu hóa. Mỗi ví dụ đã được cập nhật. Tôi hy vọng bạn thích nó!                    ', '2019-11-15', 1, 0, 1),
+(5, 'Laravel 6 From Scratch', 'laravel6-from-scratch', '8193.svg', 'Trong loạt bài này, từng bước một, tôi sẽ chỉ cho bạn cách xây dựng các ứng dụng web với Laravel 6. Chúng ta sẽ bắt đầu với những điều cơ bản và dần dần đào sâu hơn, khi chúng ta xem xét các ví dụ. thực tế. Sau khi hoàn thành, bạn nên có tất cả các công cụ bạn cần. Bắt đầu nào!                    ', '2019-11-15', 0, 0, 1),
+(6, 'Learn Vue 2: Step By Step', 'learn -vue2:-step-by-step', '3400.png', 'Khi bạn tiếp tục xây dựng các dự án mới, bạn sẽ thấy mình tiếp cận cùng một nhóm các thành phần nhiều lần. Hầu hết các trang web yêu cầu phương thức, thả xuống, chú giải công cụ, v.v. Mặc dù bạn chắc chắn có thể sử dụng khung UI, thay vào đó, hãy tìm hiểu cách xây dựng các thành phần này (và hơn thế nữa) từ đầu.                    ', '2019-11-15', 1, 0, 3),
+(7, 'The PHP Practitioner', 'the-php-practitioner', '5062.webp', '<div>Tất cả chúng ta bắt đầu ở đâu đó. Khi nói đến phát triển web với PHP, tốt, điểm dừng đầu tiên của bạn là loạt bài này. Được thiết kế đặc biệt và dành riêng cho người mới bắt đầu, tại đây, bạn sẽ tìm hiểu các nguyên tắc cơ bản của PHP - tất cả các cách để xác định các biến và mảng.</div><div><br></div><div>Nếu bạn cảm thấy hơi không chuẩn bị cho nội dung tại Laracasts, loạt bài \"PHP cho người mới bắt đầu\" này sẽ là điểm dừng chân tiếp theo của bạn. Bài học mới được công bố vào thứ năm hàng tuần, vì vậy đừng tụt lại phía sau!</div>', '2019-11-15', 0, 0, 2),
+(10, 'Javascript From Scratch', 'javascript-from-scratch', '6882.png', 'JavaScript, theo phiên bản hiện hành, là một ngôn ngữ lập trình thông dịch được phát triển từ các ý niệm nguyên mẫu. Ngôn ngữ này được dùng rộng rãi cho các trang web cũng như phía máy chủ.                    ', '2019-11-27', 0, 1, 5),
+(11, 'CSS Tutorial for Beginners', 'css-tutorial-for-beginners', '5859.webp', 'Trong tin học, các tập tin định kiểu theo tầng – dịch từ tiếng Anh là Cascading Style Sheets – được dùng để miêu tả cách trình bày các tài liệu viết bằng ngôn ngữ HTML và XHTML. Ngoài ra ngôn ngữ định kiểu theo tầng cũng có thể dùng cho XML, SVG, XUL.                   ', '2019-11-27', 1, 0, 6),
+(12, 'Build A Laravel App With TDD', 'build-a-laravel-app-with-tdd', '7973.svg', '<div>Đã đến lúc sử dụng các kỹ thuật mà chúng ta đã học được trong Laravel From Scratch và đưa chúng vào sử dụng tốt để xây dựng ứng dụng trong thế giới thực đầu tiên của bạn. Cùng nhau, chúng ta sẽ tận dụng TDD để tạo Birdboard : một ứng dụng quản lý dự án giống như Basecamp tối thiểu.</div><div><br></div><div>Sê-ri này sẽ cung cấp cho chúng tôi một loạt các cơ hội để kéo tay áo lên và kiểm tra sườn của chúng ta. Như mọi khi, chúng tôi bắt đầu từ đầu : laravel new birdboard.</div>                    ', '2019-11-28', 0, 0, 7),
+(22, 'Git - Github', ' git---github', '8595.png', '<font color=\"#222222\" face=\"arial, sans-serif\"><span style=\"font-size: 14px;\">GitHub là một dịch vụ lưu trữ nguồn Git dựa trên web cho các dự án phát triển phần mềm. GitHub cung cấp cả phiên bản miễn phí và trả phí cho tài khoản. Các dự án nguồn mở sẽ được cung cấp các kho lưu trữ miễn phí.</span></font>', '2019-12-09', 1, 2, 8);
 
 -- --------------------------------------------------------
 
@@ -99,7 +101,8 @@ INSERT INTO `chude` (`id_cd`, `name_cd`, `id_kh`) VALUES
 (4, ' PHP Basic', 2),
 (5, 'JAVASCRIPT Basic', 4),
 (6, 'CSS Basic', 9),
-(7, 'Build an App', 1);
+(7, 'Build an App', 1),
+(8, 'Git basic and hard', 12);
 
 -- --------------------------------------------------------
 
@@ -122,10 +125,9 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`id_cmt`, `parent_cmt`, `comment`, `date`, `house`, `id_video`, `id_tk`) VALUES
-(99, 97, '<p>sadsadsa</p>\n', '2019-11-25', '06:36:00', 1, 2),
-(100, 97, '<p>sadsadsadsa</p>\n', '2019-11-25', '06:37:00', 1, 2),
-(101, 97, '<p>dsfds</p>\n', '2019-11-25', '06:37:00', 1, 2),
-(102, 97, '<p>dsfdsfs</p>\n', '2019-11-25', '06:37:00', 1, 2);
+(124, 0, '<p>Tuyệt gh&ecirc; &hearts;</p>\n', '2019-12-04', '09:24:00', 2, 1),
+(125, 0, '<p>Tuyệt vời &hearts;</p>\n', '2019-12-04', '09:26:00', 21, 1),
+(137, 124, '<p>&hearts;&hearts;&hearts;</p>\n', '2019-12-04', '03:02:00', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -150,7 +152,8 @@ INSERT INTO `khoahoc` (`id_kh`, `name_kh`, `image_kh`, `mamau`, `skill`) VALUES
 (2, 'PHP', '7225.jpg', '#3ca7f9', 'PHP: Hypertext Preprocessor, thường được viết tắt thành PHP là một ngôn ngữ lập trình kịch bản hay một loại mã lệnh chủ yếu được dùng để phát triển các ứng dụng viết cho máy chủ, mã nguồn mở, dùng cho mục đích tổng quát. Nó rất thích hợp với web và có thể dễ dàng nhúng vào trang HTML'),
 (3, 'VUE', '4170.svg', '#f8b22c', 'Vue.js, gọi tắt là Vue, là một framework linh động dùng để xây dựng giao diện người dùng. Khác với các framework nguyên khối, Vue được thiết kế từ đầu theo hướng cho phép và khuyến khích việc phát triển ứng dụng theo các bước.'),
 (4, 'JAVASCRIPT', '778.webp', '#f2fa9a', 'JavaScript, theo phiên bản hiện hành, là một ngôn ngữ lập trình thông dịch được phát triển từ các ý niệm nguyên mẫu. Ngôn ngữ này được dùng rộng rãi cho các trang web cũng như phía máy chủ.<br>'),
-(9, 'CSS', '1271.png', '#0066ff', 'Trong tin học, các tập tin định kiểu theo tầng – dịch từ tiếng Anh là Cascading Style Sheets – được dùng để miêu tả cách trình bày các tài liệu viết bằng ngôn ngữ HTML và XHTML. Ngoài ra ngôn ngữ định kiểu theo tầng cũng có thể dùng cho XML, SVG, XUL.');
+(9, 'CSS', '1271.png', '#0066ff', 'Trong tin học, các tập tin định kiểu theo tầng – dịch từ tiếng Anh là Cascading Style Sheets – được dùng để miêu tả cách trình bày các tài liệu viết bằng ngôn ngữ HTML và XHTML. Ngoài ra ngôn ngữ định kiểu theo tầng cũng có thể dùng cho XML, SVG, XUL.'),
+(12, 'TOOLING', '5887.png', '#c459ec', 'Những công cụ hữu ích này sẽ giúp bạn lập trình tốt hơn trong các dự án , khi vào doanh nghiệp chúng ta bắt buộc phải biết!');
 
 -- --------------------------------------------------------
 
@@ -160,25 +163,20 @@ INSERT INTO `khoahoc` (`id_kh`, `name_kh`, `image_kh`, `mamau`, `skill`) VALUES
 
 CREATE TABLE `lichsu` (
   `id_ls` int(11) NOT NULL,
-  `link` text NOT NULL,
+  `linkls` text NOT NULL,
   `ngayluu` date NOT NULL,
+  `lession` int(11) NOT NULL,
   `id_tk` int(11) NOT NULL,
-  `id_bh` int(11) NOT NULL
+  `id_video` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `lichsu`
 --
 
-INSERT INTO `lichsu` (`id_ls`, `link`, `ngayluu`, `id_tk`, `id_bh`) VALUES
-(1, '/poly/duanmot/series.php?id_bh=1&id_video=4&lession=4', '2019-11-22', 3, 1),
-(2, '/poly/duanmot/series.php?id_bh=1&id_video=1&lession=1', '2019-11-26', 4, 1),
-(3, '/poly/duanmot/series.php?id_bh=1&id_video=1&lession=1', '2019-11-26', 1, 1),
-(4, '/poly/duanmot/series.php?id_bh=1&id_video=2&lession=2', '2019-11-25', 2, 1),
-(5, '/poly/duanmot/series.php?id_bh=1&id_video=2&lession=2', '2019-11-25', 0, 1),
-(6, '/poly/duanmot/series.php?id_bh=11&id_video=58&lession=1', '2019-11-27', 4, 11),
-(7, '/poly/duanmot/series.php?id_bh=10&id_video=47&lession=1', '2019-11-27', 1, 10),
-(8, '/poly/duanmot/series.php?id_bh=11&id_video=58&lession=1', '2019-11-27', 1, 11);
+INSERT INTO `lichsu` (`id_ls`, `linkls`, `ngayluu`, `lession`, `id_tk`, `id_video`) VALUES
+(11, '/poly/duanmot/series.php?id_bh=3&id_video=29&lession=1', '2019-12-08', 1, 1, 29),
+(12, '/poly/duanmot/series.php?id_bh=11&id_video=58&lession=1', '2019-12-08', 1, 1, 58);
 
 -- --------------------------------------------------------
 
@@ -215,7 +213,6 @@ CREATE TABLE `taikhoan` (
   `id_tk` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `phone` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `pass` varchar(255) NOT NULL,
   `quyen` int(11) NOT NULL
@@ -225,11 +222,11 @@ CREATE TABLE `taikhoan` (
 -- Đang đổ dữ liệu cho bảng `taikhoan`
 --
 
-INSERT INTO `taikhoan` (`id_tk`, `name`, `image`, `phone`, `email`, `pass`, `quyen`) VALUES
-(1, 'Admin', 'Crush.jpg', '0779237088', 'admin@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1),
-(2, 'Ngọc Tú', '6400.jpg', '0999999999', 'anhtu@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 2),
-(3, 'Mai', '417.png', '0999888888', 'mai@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 3),
-(4, 'Xoáy', '3755.svg', '32532523', 'xoay@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 3);
+INSERT INTO `taikhoan` (`id_tk`, `name`, `image`, `email`, `pass`, `quyen`) VALUES
+(1, 'Admin', 'Crush.jpg', 'admin@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1),
+(2, 'Ngọc Tú', '6400.jpg', 'anhtu@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 2),
+(3, 'Mai', '417.png', 'mai@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 3),
+(4, 'Xoáy', '3755.svg', 'xoay@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 3);
 
 -- --------------------------------------------------------
 
@@ -320,7 +317,21 @@ INSERT INTO `video` (`id_video`, `name_vd`, `link`, `ngaythem`, `id_bh`) VALUES
 (76, 'Index', 'https://www.youtube.com/embed/rskh-iy7bq4', '2019-11-28', 12),
 (77, 'Protecting the API', 'https://www.youtube.com/embed/CB-GgZthZcU', '2019-11-28', 12),
 (78, 'Setting Up Passport', 'https://www.youtube.com/embed/IK5M2HdNHFA', '2019-11-28', 12),
-(79, 'Social Authentication', 'https://www.youtube.com/embed/DMPo-ggHVOY', '2019-11-28', 12);
+(79, 'Social Authentication', 'https://www.youtube.com/embed/DMPo-ggHVOY', '2019-11-28', 12),
+(80, 'Git - Giới thiệu về VCS', 'https://www.youtube.com/embed/JK9EppK6kxI', '2019-12-09', 22),
+(81, 'Git - 01: Đăng kí tài khoản github', 'https://www.youtube.com/embed/7zxr6fKfCWo', '2019-12-09', 22),
+(82, 'Git - 02: Cài đặt git trên Ubuntu', 'https://www.youtube.com/embed/hkDO9G6o8jg', '2019-12-09', 22),
+(83, 'Git - 02B: Gỡ git trong Ubuntu - uninstall git Ubuntu', 'https://www.youtube.com/embed/2ORx60uRcxw', '2019-12-09', 22),
+(84, 'Git - 03: Cài git trên windows', 'https://www.youtube.com/embed/lFiceMCN0Ns', '2019-12-09', 22),
+(85, 'Git - Tài liệu tham khảo về Git.', 'https://www.youtube.com/embed/Dfu8VaWDP7Q', '2019-12-09', 22),
+(86, 'Git - 04: Thiết lập username, email, password cho git', 'https://www.youtube.com/embed/NTUUJIS_EQ4', '2019-12-09', 22),
+(87, 'Git - 05: Xoá bỏ username, email, password khỏi git', 'https://www.youtube.com/embed/UsSae_TqPsY', '2019-12-09', 22),
+(88, 'Git - 06: Clone một repository từ github về local', 'https://www.youtube.com/embed/n5Gq54h0G9w', '2019-12-09', 22),
+(89, 'Git - 06B: git clone and rename repository - Sao chép đồng thời đổi tên repository', 'https://www.youtube.com/embed/Xuyk-q1a9PQ', '2019-12-09', 22),
+(90, 'Git - 07: Tạo remote repository', 'https://www.youtube.com/embed/3ivkObtYyHI', '2019-12-09', 22),
+(91, 'Git - 08: git init - Khởi tạo việc theo dõi một repository', 'https://www.youtube.com/embed/yy2zUUok-qI', '2019-12-09', 22),
+(92, 'Git - 09: Trạng thái các file trong một repository', 'https://www.youtube.com/embed/wDF7k5qTo_o', '2019-12-09', 22),
+(93, 'Git - 10: Lệnh git status', 'https://www.youtube.com/embed/W8GZlFW36Mc', '2019-12-09', 22);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -369,7 +380,7 @@ ALTER TABLE `khoahoc`
 ALTER TABLE `lichsu`
   ADD PRIMARY KEY (`id_ls`),
   ADD KEY `fk02` (`id_tk`) USING BTREE,
-  ADD KEY `fk3` (`id_bh`);
+  ADD KEY `fk1` (`id_video`);
 
 --
 -- Chỉ mục cho bảng `setting`
@@ -398,7 +409,7 @@ ALTER TABLE `video`
 -- AUTO_INCREMENT cho bảng `baihoc`
 --
 ALTER TABLE `baihoc`
-  MODIFY `id_bh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_bh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `cauhoi`
@@ -410,25 +421,25 @@ ALTER TABLE `cauhoi`
 -- AUTO_INCREMENT cho bảng `chude`
 --
 ALTER TABLE `chude`
-  MODIFY `id_cd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_cd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id_cmt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `id_cmt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
 
 --
 -- AUTO_INCREMENT cho bảng `khoahoc`
 --
 ALTER TABLE `khoahoc`
-  MODIFY `id_kh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_kh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `lichsu`
 --
 ALTER TABLE `lichsu`
-  MODIFY `id_ls` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_ls` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `taikhoan`
@@ -440,7 +451,7 @@ ALTER TABLE `taikhoan`
 -- AUTO_INCREMENT cho bảng `video`
 --
 ALTER TABLE `video`
-  MODIFY `id_video` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id_video` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -475,7 +486,7 @@ ALTER TABLE `comment`
 -- Các ràng buộc cho bảng `lichsu`
 --
 ALTER TABLE `lichsu`
-  ADD CONSTRAINT `fk3` FOREIGN KEY (`id_bh`) REFERENCES `baihoc` (`id_bh`);
+  ADD CONSTRAINT `fk1` FOREIGN KEY (`id_video`) REFERENCES `video` (`id_video`);
 
 --
 -- Các ràng buộc cho bảng `video`

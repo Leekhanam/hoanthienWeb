@@ -2,11 +2,6 @@
     <div class="box sidemenu">
         <div class="block" id="section-menu">
             <ul class="section menu">
-                <li><a class="menuitem">Quản lí tài khoản</a>
-                    <ul class="submenu">
-                        <li><a href="tklist.php"><i class="fa fa-address-book-o"> </i> Xem tất cả!!!</a> </li>
-                    </ul>
-                </li>
                 <li><a class="menuitem">Quản lí khóa học</a>
                     <ul class="submenu">
                         <li><a href="khoahocadd.php">Thêm khóa học</a> </li>
@@ -27,7 +22,15 @@
                 </li>
                 <li><a class="menuitem">Quản lí bình luận</a>
                     <ul class="submenu">
-                        <li><a href="chudeadd.php">Bài học được bình luận</a> </li>
+                        <li><a href="binhluan.php">Bài học được bình luận</a> </li>
+                    </ul>
+                </li>
+                <?php 
+                    if (Session::get("id_tk") == 1) {
+                 ?>
+                <li><a class="menuitem">Quản lí tài khoản</a>
+                    <ul class="submenu">
+                        <li><a href="tklist.php"><i class="fa fa-address-book-o"> </i> Xem tất cả!!!</a> </li>
                     </ul>
                 </li>
                 <li><a class="menuitem">Cài đặt Site</a>
@@ -35,6 +38,7 @@
                         <li><a href="settingedit.php">Show tất cả</a></li>                        
                     </ul>
                 </li>
+                <?php } ?>
             </ul>
         </div>
     </div>

@@ -21,11 +21,18 @@
 		public function insert_baihoc($data,$files)
 		{
 			$name_bh = mysqli_real_escape_string($this->db->link, $data['name_bh']);
-			$keyword = mysqli_real_escape_string($this->db->link, $data['keyword']);
 			$chuthich = mysqli_real_escape_string($this->db->link, $data['chuthich']);
 			$status = mysqli_real_escape_string($this->db->link, $data['status']);
+			$loai = mysqli_real_escape_string($this->db->link, $data['loai']);
 			$chude = mysqli_real_escape_string($this->db->link, $data['chude']);
 			$date = date("Y/m/d");
+			$keyword = mb_strtolower($name_bh,'UTF-8');
+					$text = ' ';
+					$mang = explode(' ', $keyword);
+						foreach ($mang as $value) {
+							$text .= $value.'-';
+						}
+					$keywords = trim($text,'-');
 
 			$permited = array('jpg','png','svg','webp');
 			$file_name = $_FILES['image']['name'];
@@ -45,7 +52,7 @@
 			}else {
 					move_uploaded_file($file_temp, $uploaded_image);
 					$query = "INSERT INTO baihoc 
-					VALUES ('','$name_bh','$keyword','$unique_image','$chuthich','$date','$status','$chude')";
+					VALUES ('','$name_bh','$keywords','$unique_image','$chuthich','$date','$status','$loai','$chude')";
 
 					$result = $this->db->insert($query);
 					if ($result) {
@@ -75,10 +82,17 @@
 		public function update_baihoc($data,$files,$id_bh)
 		{
 			$name_bh = mysqli_real_escape_string($this->db->link, $data['name_bh']);
-			$keyword = mysqli_real_escape_string($this->db->link, $data['keyword']);
 			$chuthich = mysqli_real_escape_string($this->db->link, $data['chuthich']);
 			$status = mysqli_real_escape_string($this->db->link, $data['status']);
+			$loai = mysqli_real_escape_string($this->db->link, $data['loai']);
 			$chude = mysqli_real_escape_string($this->db->link, $data['chude']);
+			$text = ' ';
+			$keyword = mb_strtolower($name_bh,'UTF-8');
+					$mang = explode(' ', $keyword);
+						foreach ($mang as $value) {
+							$text .= $value.'-';
+						}
+					$keywords = trim($text,'-');
 
 			//Kiểm tra hình ảnh & đưa vào folder uploads
 			$permited = array('jpg','png','svg','webp');
@@ -101,8 +115,9 @@
 			}else{
 			move_uploaded_file($file_temp, $uploaded_image);
 				$query = "UPDATE baihoc 
-				SET name_bh='$name_bh',keyword='$keyword',image='$unique_image',chuthich='$chuthich',status='$status',
-				id_cd='$chude' WHERE id_bh='$id_bh'";
+				SET name_bh='$name_bh',keyword='$keywords',image='$unique_image',chuthich='$chuthich',
+				status='$status',loai='$loai',id_cd='$chude' 
+				WHERE id_bh='$id_bh'";
 				$result = $this->db->update($query);
 				if ($result) {
 					Session::set("success","<span class='success'>Thay đổi bài học thành công!</span>");
@@ -111,7 +126,8 @@
 			}
 			}
 			$query = "UPDATE baihoc 
-				SET name_bh='$name_bh',keyword='$keyword',chuthich='$chuthich',id_cd='$chude' WHERE id_bh='$id_bh'";
+				SET name_bh='$name_bh',keyword='$keywords',chuthich='$chuthich',loai='$loai',id_cd='$chude' 
+				WHERE id_bh='$id_bh'";
 				$result = $this->db->update($query);
 				if ($result) {
 					Session::set("success","<span class='success'>Thay đổi bài học thành công!</span>");
@@ -168,6 +184,39 @@
 			$query = "SELECT * FROM baihoc INNER JOIN chude ON baihoc.id_cd = chude.id_cd
 			INNER JOIN khoahoc ON chude.id_kh = khoahoc.id_kh  
 			WHERE chude.id_kh = khoahoc.id_kh AND status=1 LIMIT 4";
+				$result = $this->db->select($query);
+				return $result;
+		}
+
+		public function show_baihoc_update()
+		{
+			$query = "SELECT * FROM video INNER JOIN baihoc ON video.id_bh = baihoc.id_bh
+			INNER JOIN chude ON baihoc.id_cd = chude.id_cd
+			INNER JOIN khoahoc ON chude.id_kh = khoahoc.id_kh
+			GROUP BY baihoc.id_bh
+			ORDER BY ngaythem DESC LIMIT 8";
+				$result = $this->db->select($query);
+				return $result;
+		}
+
+		public function show_baihoc_xuhuong()
+		{
+			$query = "SELECT * FROM video INNER JOIN baihoc ON video.id_bh = baihoc.id_bh
+			INNER JOIN chude ON baihoc.id_cd = chude.id_cd
+			INNER JOIN khoahoc ON chude.id_kh = khoahoc.id_kh
+			GROUP BY baihoc.id_bh HAVING loai=1
+			ORDER BY ngaythem DESC LIMIT 8";
+				$result = $this->db->select($query);
+				return $result;
+		}
+
+		public function show_baihoc_lienquan()
+		{
+			$query = "SELECT * FROM video INNER JOIN baihoc ON video.id_bh = baihoc.id_bh
+			INNER JOIN chude ON baihoc.id_cd = chude.id_cd
+			INNER JOIN khoahoc ON chude.id_kh = khoahoc.id_kh
+			GROUP BY baihoc.id_bh HAVING loai=2
+			ORDER BY ngaythem DESC LIMIT 4";
 				$result = $this->db->select($query);
 				return $result;
 		}

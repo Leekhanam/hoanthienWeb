@@ -52,8 +52,8 @@
 		{
 			$name = mysqli_real_escape_string($this->db->link, $name);
 			$link = mysqli_real_escape_string($this->db->link, $link);
-
-			$update = "UPDATE video SET name_vd='$name',link='$link' WHERE id_video='$id_video'";
+			$date = date("Y/m/d");
+			$update = "UPDATE video SET name_vd='$name',link='$link',ngaythem='$date' WHERE id_video='$id_video'";
 			$result = $this->db->update($update);
 			if ($result) {
 				Session::set("success","<span class='success'>Thay đổi video thành công!</span>");

@@ -4,6 +4,7 @@
 </head>
 <body>
   <?php 
+  Session::checkLogin();
   $id_tk = Session::get("id_tk");
   if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     $update_taikhoan = $tk->update_taikhoan($id_tk,$_POST,$_FILES);
@@ -44,7 +45,6 @@ if (isset($get_taikhoan)) {
          <p id="title">THÔNG TIN</p>
          <h1>Name: <?php echo $result['name']; ?></h1>
          <p>Email: <?php echo $result['email']; ?></p>
-         <p>Phone: <?php echo $result['phone']; ?></p>
          <img width="450" height="150" src="image\congnghe.png">
        </div>
        <div class="col-sm-7 img">
@@ -57,33 +57,15 @@ if (isset($get_taikhoan)) {
    <div class="container">
     <div class="col-sm-12">
      <div class="phanmoi">
-      <p>Thông tin cá nhân : <span>Bạn có thể xem lịch sử học và sửa thông tin ở đây!</span></p>
+      <p>Thông tin cá nhân : <span>Bạn có thể sửa thông tin ở đây!</span></p>
     </div>
   </div>
 </div>
 </article>
 </section>
 <div class="container">
-  <div class="row">
-   <div class="col-sm-6 btn border">
-    <h5 class="text-center">Lịch Sử Học</h5>
-    <hr class="alert-secondary">
-    <div class="text-left card alert-success pre-scrollable">
-      <?php
-      $get_lichsu = $ls->get_lichsu($id_tk);
-      if (isset($get_lichsu)) {
-       while ($resultl = $get_lichsu->fetch_assoc()) {
-         ?>
-         <div>
-          <a href="<?php echo $resultl['link']; ?>" target="_blank">
-            <?php echo $resultl['name_bh']; ?>
-          </a>
-          <span class="float-right"><?php echo $resultl['ngayluu']; ?></span>
-        </div>
-      <?php }} ?>
-    </div>
-  </div>
-  <div class="col-sm-6 btn border">
+  <div class="row"> 
+  <div class="col-sm-12 btn border">
     <h5 class="text-center">Thay Đổi Thông Tin Cá Nhân</h5>
     <hr class="alert-secondary">
     <div class="text-left card alert-success">
@@ -99,9 +81,6 @@ if (isset($get_taikhoan)) {
        <div class="card btn-outline-dark">
          <input type="file" class="custom-file-input" name="image" >
          <label class="custom-file-label" for="customFile">Image...</label>
-       </div>
-       <div class="card btn-outline-dark">
-         <input type="text" class="form-control" value="<?php echo $result['phone']; ?>" placeholder="Phone..."  name="phone">
        </div>
        <div class="card btn-outline-dark">
          <input type="text" class="form-control" value="<?php echo $result['email']; ?>" placeholder="Email..."  name="email">

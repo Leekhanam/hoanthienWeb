@@ -18,16 +18,16 @@
 			$this->fm = new Format();
 		}
 
-		public function add_lichsu($link,$id_tk,$id_bh)
+		public function add_lichsu($link,$id_tk,$id_video,$lession)
 		{
 			$date = date("Y/m/d");
-			$query = "SELECT id_bh,id_tk FROM lichsu WHERE id_tk='$id_tk' AND id_bh='$id_bh'";
+			$query = "SELECT id_video,id_tk FROM lichsu WHERE id_tk='$id_tk' AND id_video='$id_video'";
 				$result = $this->db->select($query);
 				if ($result == null) {
-					$insert = "INSERT INTO lichsu VALUES ('','$link','$date','$id_tk','$id_bh')";
+					$insert = "INSERT INTO lichsu VALUES ('','$link','$date','$lession','$id_tk','$id_video')";
 					$true = $this->db->insert($insert);
 				}else {
-					$insert = "UPDATE lichsu SET link='$link',ngayluu='$date' WHERE id_tk='$id_tk' AND id_bh='$id_bh'";
+					$insert = "UPDATE lichsu SET linkls='$link',ngayluu='$date',lession='$lession' WHERE id_tk='$id_tk' AND id_video='$id_video'";
 					$true = $this->db->insert($insert);
 				}
 				return $true;
@@ -35,8 +35,11 @@
 
 		public function get_lichsu($id_tk)
 		{
-			$query = "SELECT * FROM lichsu INNER JOIN baihoc ON lichsu.id_bh = baihoc.id_bh
-			WHERE id_tk = '$id_tk' AND lichsu.id_bh = baihoc.id_bh";
+			$query = "SELECT * FROM lichsu INNER JOIN video ON lichsu.id_video = video.id_video
+			INNER JOIN baihoc ON video.id_bh = baihoc.id_bh
+			INNER JOIN chude ON baihoc.id_cd = chude.id_cd
+			INNER JOIN khoahoc ON chude.id_kh = khoahoc.id_kh
+			WHERE id_tk = '$id_tk' AND lichsu.id_video = video.id_video";
 				$result = $this->db->select($query);
 				if ($result) {
 					return $result;

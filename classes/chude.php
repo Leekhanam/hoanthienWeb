@@ -75,7 +75,7 @@
 
 		public function get_chude_FE($id_kh)
 		{
-			$select = "SELECT * FROM chude WHERE id_kh='$id_kh'";
+			$select = "SELECT * FROM chude WHERE id_kh='$id_kh' AND id_cd IN (SELECT id_cd FROM baihoc)";
 			$get_chude_FE = $this->db->select($select);
 			return $get_chude_FE;
 		}

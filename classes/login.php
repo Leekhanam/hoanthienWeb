@@ -1,7 +1,5 @@
 <?php 
 	$filepath = realpath(dirname(__FILE__));
-	include ($filepath.'/../lib/session.php');
-	Session::init();
 	require_once ($filepath.'/../lib/database.php');
 	require_once ($filepath.'/../helper/format.php'); 
 ?>
@@ -44,7 +42,7 @@
 					Session::set('name',$value['name']);
 					Session::set('quyen',$value['quyen']);
 					if($a_check==1){
-						cookie ('siteAuth', 'email='.$value['email'].'&pass='.$value['pass'], time() + $cookie_time);
+						setcookie ('siteAuth', 'email='.$value['email'].'&pass='.$value['pass'], time() + $cookie_time);
 					}
 					header('Location:admin/dashboard.php');
 
@@ -57,9 +55,9 @@
 					Session::set('name',$value['name']);
 					Session::set('name',$value['name']);
 					if($a_check==1){
-						cookie ('siteAuth', 'email='.$value['email'].'&pass='.$value['pass'], time() + $cookie_time);
+						setcookie ('siteAuth', 'email='.$value['email'].'&pass='.$value['pass'], time() + $cookie_time);
 					}
-					header('Location:home.php');
+					header('Location:index.php');
 				}
 			}else {
 					$alert = "Sai tài khoản hoặc mật khẩu!
@@ -100,7 +98,7 @@
 					Session::set('image',$value['image']);
 					Session::set('name',$value['name']);
 					Session::set('name',$value['name']);
-					header('Location:home.php');
+					header('Location:index.php');
 				}
 			}	
 		}
@@ -108,7 +106,6 @@
 		public function dangki($data,$files)
 		{
 			$name = mysqli_real_escape_string($this->db->link, $data['name']);
-			$phone = mysqli_real_escape_string($this->db->link, $data['phone']);
 			$email = mysqli_real_escape_string($this->db->link, $data['email']);
 			$password = mysqli_real_escape_string($this->db->link, $data['password']);
 			$repassword = mysqli_real_escape_string($this->db->link, $data['repassword']);
@@ -123,15 +120,7 @@
 			$unique_image = mt_rand(100,10000).".".$file_ext;
 			$uploaded_image = "admin/uploads/".$unique_image;
 
-			if (is_numeric($phone) == false) {
-					$alert = "<span class='error'>Số điện thoại phải là chữ số!</span>
-					<script type='text/javascript'>
-					    $(document).ready(function(){
-					        $('#dangki').modal();
-					    });
-					</script>";
-					return $alert;
-			}else if ($file_ext != $permited[0] && $file_ext != $permited[1] && $file_ext != $permited[2] && $file_ext != $permited[3]) {
+			if ($file_ext != $permited[0] && $file_ext != $permited[1] && $file_ext != $permited[2] && $file_ext != $permited[3]) {
 				$alert = "<span class='error'>File tải lên không đúng định dạng!</span>
 					<script type='text/javascript'>
 					    $(document).ready(function(){
@@ -174,7 +163,7 @@
 					move_uploaded_file($file_temp, $uploaded_image);
 					$password_md5 = md5($repassword);
 					$query = "INSERT INTO taikhoan
-					VALUES ('','$name','$unique_image','$phone','$email','$password_md5',3)";
+					VALUES ('','$name','$unique_image','$email','$password_md5',3)";
 
 					$result = $this->db->insert($query);
 					if ($result) {

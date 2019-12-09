@@ -7,6 +7,7 @@
     }
   header("Cache-Control: no-cache, must-revalidate");
   header("Pragma: no-cache"); 
+  header('Content-Type: text/html; charset=utf-8');
   header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); 
   header("Cache-Control: max-age=2592000");
 ?>
@@ -92,7 +93,7 @@
             <ul class="nav main">
                 <li class="ic-dashboard"><a href="dashboard.php"><span>Dashboard</span></a> </li>
 				<li class="ic-typography"><a href="changepassword.php"><span>Change Password</span></a></li>
-                <li class="ic-charts"><a href="../home.php"><span>Visit Website</span></a></li>
+                <li class="ic-charts"><a href="../index.php"><span>Visit Website</span></a></li>
             </ul>
         </div>
         <div class="clear">

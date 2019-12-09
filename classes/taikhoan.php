@@ -39,7 +39,6 @@
 		public function update_taikhoan($id_tk,$data,$files)
 		{
 			$name = mysqli_real_escape_string($this->db->link, $data['name']);
-			$phone = mysqli_real_escape_string($this->db->link, $data['phone']);
 			$email = mysqli_real_escape_string($this->db->link, $data['email']);
 			$pass = mysqli_real_escape_string($this->db->link, $data['pass']);
 
@@ -54,6 +53,16 @@
 			$uploaded_image = "admin/uploads/".$unique_image;
 
 			if ($pass != null) {
+				$check = preg_match('/\w/',$password);
+				if ($check) {
+					$alert = "<span class='error'>Password không chứa kí tự đặc biệt!</span>
+					<script type='text/javascript'>
+					    $(document).ready(function(){
+					        $('#dangki').modal();
+					    });
+					</script>";
+				return $alert;
+				}
 				$password = md5($pass);
 				$query = "UPDATE taikhoan SET pass='$password' WHERE id_tk='$id_tk'";
 				$result = $this->db->update($query);
@@ -73,7 +82,7 @@
 			}else{
 			move_uploaded_file($file_temp, $uploaded_image);
 				$query = "UPDATE taikhoan 
-				SET name='$name',image='$unique_image',phone='$phone',email='$email'
+				SET name='$name',image='$unique_image',email='$email'
 				WHERE id_tk='$id_tk'";
 				$result = $this->db->update($query);
 				if ($result) {
@@ -83,7 +92,7 @@
 			}
 			}
 			$query = "UPDATE taikhoan 
-				SET name='$name',phone='$phone',email='$email' WHERE id_tk='$id_tk'";
+				SET name='$name',email='$email' WHERE id_tk='$id_tk'";
 				$result = $this->db->update($query);
 				if ($result) {
 				$alert = "<span class='success'>Thay đổi tài khoản thành công!</span>";

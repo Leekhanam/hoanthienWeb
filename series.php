@@ -2,6 +2,7 @@
 <link rel="stylesheet" type="text/css" href="./css/series.css">
 <title>Code Club | Series</title>
 <?php 
+	Session::checkLogin();
 	if (isset($_GET['id_bh'])) {
 	    $id_bh = $_GET['id_bh'];
 	    Session::set('id_bh',$id_bh);
@@ -9,7 +10,9 @@
 	if (isset($_GET['id_bh']) && isset($_GET['id_video']) && isset($_GET['lession'])) {
 		$link = $fm->curPageURL();
 		$id_tk = Session::get("id_tk");
-		$ls->add_lichsu($link,$id_tk,$id_bh);
+		$id_video = $_GET['id_video'];
+		$lession = $_GET['lession'];
+		$ls->add_lichsu($link,$id_tk,$id_video,$lession);
 	}
  ?>
 </head>
@@ -42,7 +45,8 @@
 						while ($resultbh = $get_edit_baihoc->fetch_assoc()) {
       		 ?>
       	<div class="link">
-      		<div>HOME / SERIES / <?php echo $resultbh['name_bh']; ?> / 
+      		<div><a href="index.php">HOME</a> / <a href="index.php">SERIES</a> / 
+      			<a href="series.php?id_bh=<?php echo $id_bh; ?>"><?php echo $resultbh['name_bh']; ?></a> / 
       			<?php if (isset($_GET['lession'])) {
       				echo 'LESSION '.$_GET['lession'];
       			} ?></div>
@@ -56,7 +60,7 @@
 	      			<div id="tieude">
 	      				<img width="20%" src="image/rela.svg" align="left">
 	      				<h5 align="right"><?php echo $resultbh['name_bh']; ?></h5>
-	      				<i class="fa fa-code"> 6 Lession</i> <i class="fa fa-bullhorn"><?php echo $resultbh['ngaytao']; ?></i>
+	      				<i class="fa fa-code"> <?php echo Session::get("soluong"); ?> Lession</i> <i class="fa fa-bullhorn"><?php echo $resultbh['ngaytao']; ?></i>
 	      			</div>
 	      			<hr />
 	      		

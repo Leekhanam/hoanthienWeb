@@ -16,11 +16,10 @@
 					<thead>
 						<tr>
 							<th>Serial No.</th>
-							<th>Name</th>
-							<th>Email</th>
-							<th>Image</th>
-							<th>Phone</th>
-							<th>Quyền</th>
+							<th width="15%">Name</th>
+							<th width="25%">Email</th>
+							<th width="20%">Image</th>
+							<th width="10%">Quyền</th>
 							<th>Action</th>
 						</tr>
 					</thead>
@@ -37,7 +36,6 @@
 							<td><?php echo $result['name']; ?></td>
 							<td><?php echo $result['email']; ?></td>
 							<td><img width="50" src="uploads/<?php echo $result['image']; ?>"></td>
-							<td><?php echo $result['phone']; ?></td>
 							<td><?php 
 								if ($result['quyen'] == 1) {
 									?>

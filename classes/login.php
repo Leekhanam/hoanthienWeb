@@ -129,8 +129,9 @@
 					</script>";
 				return $alert;
 			}else {
-				$check = preg_match('/\w/',$password);
-				if ($check) {
+				$pattern = '/[a-zA-Z0-9]/';
+				$check = preg_match($pattern,$password);
+				if ($check == false) {
 					$alert = "<span class='error'>Password không chứa kí tự đặc biệt!</span>
 					<script type='text/javascript'>
 					    $(document).ready(function(){

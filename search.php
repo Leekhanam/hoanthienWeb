@@ -12,7 +12,11 @@
 				id="hdTutoForm">
 				<div class="md-form active-pink active-pink-2 mb-3 mt-0">
 					<span class="icon"><i class="fa fa-search"></i></span>
-					<input class="form-control search" id="keywords" name="keywords" type="text" placeholder="Enter For Search" aria-label="Search">
+					<input class="form-control search" value="<?php if (isset($_GET['keywords'])) {
+							$keywords = $_GET['keywords'];
+							echo $keywords;
+							} ?>" 
+			id="keywords" name="keywords" type="text" placeholder="Enter For Search" aria-label="Search">
 					<a id="spinner" href=""><i class="fa fa-spinner fa-spin"></i></a>
 				</div>
 				<div id="goiy">
@@ -33,8 +37,6 @@
 <div class="moinhat">	
 	<div class="row allkhoahoc">
 		<?php 
-		if (isset($_GET['keywords'])) {
-			$keywords = $_GET['keywords'];
 			$search = $bh->search($keywords);
 			if (isset($search)) {
 				while ($result = $search->fetch_assoc()) {
@@ -64,7 +66,13 @@
 									</div>
 								</div>
 							</div>
-						<?php }}} ?>
+						<?php }}else {
+						?>	
+							<div class="col-sm-12 text-center">
+								<h3>Không tìm thấy bài học '<span class="alert-danger"><?php echo $keywords; ?></span>'!</h3>
+							</div>
+						<?php
+						} ?>
 					</div>
 				</div>
 				<!-- Kết thúc container -->

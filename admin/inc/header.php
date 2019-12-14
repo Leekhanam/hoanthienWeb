@@ -1,4 +1,5 @@
 <?php
+    ini_set("memory_limit","16M");
     ob_start();
     include '../lib/session.php';
     Session::checkSession();

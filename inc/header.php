@@ -1,7 +1,7 @@
 <?php
     include './lib/session.php';
     Session::init();
-    include './lib/database.php';
+    include_once './lib/database.php';
     include './helper/format.php';
         if (isset($_GET['id_tk'])) {
             header('Location:index.php');
@@ -55,9 +55,10 @@
           }
 
     }
-         
-  header("Cache-Control: no-cache, must-revalidate");
+    header('Access-Control-Allow-Origin: *');
+    header("Cache-Control: no-cache, must-revalidate");
   header("Pragma: no-cache"); 
+  header('Content-Type: text/html; charset=utf-8');
   header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); 
   header("Cache-Control: max-age=2592000");
   
@@ -74,7 +75,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <script src="http://localhost/poly/duanmot/ckeditor/ckeditor.js"></script>
+    <script src="./ckeditor/ckeditor.js"></script>
     <script src="./js/placeholderTypewriter.js"></script>
 	
     

@@ -35,7 +35,7 @@
 
 		public function get_lichsu($id_tk)
 		{
-			$query = "SELECT * FROM lichsu INNER JOIN video ON lichsu.id_video = video.id_video
+			$query = "SELECT *,COUNT(baihoc.id_bh) AS baihoc FROM lichsu INNER JOIN video ON lichsu.id_video = video.id_video
 			INNER JOIN baihoc ON video.id_bh = baihoc.id_bh
 			INNER JOIN chude ON baihoc.id_cd = chude.id_cd
 			INNER JOIN khoahoc ON chude.id_kh = khoahoc.id_kh
@@ -45,6 +45,20 @@
 					return $result;
 				}
 		}	
+
+		public function show_lichsu()
+		{
+			$query = "SELECT *,COUNT(khoahoc.id_kh) AS khoahoc,COUNT(baihoc.id_bh) AS baihoc FROM taikhoan INNER JOIN lichsu ON taikhoan.id_tk = lichsu.id_tk
+			INNER JOIN video ON lichsu.id_video = video.id_video
+			INNER JOIN baihoc ON video.id_bh = baihoc.id_bh
+			INNER JOIN chude ON baihoc.id_cd = chude.id_cd
+			INNER JOIN khoahoc ON chude.id_kh = khoahoc.id_kh
+			WHERE taikhoan.id_tk IN (SELECT id_tk FROM lichsu)";
+				$result = $this->db->select($query);
+				if ($result) {
+					return $result;
+				}
+		}
 			
 	}
  ?>

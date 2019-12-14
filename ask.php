@@ -13,7 +13,7 @@
 				     	id="hdTutoForm">
 		                  <div class="md-form active-pink active-pink-2 mb-3 mt-0">
 		                      <span class="icon"><i class="fa fa-search"></i></span>
-		                        <input class="form-control search" id="keywords" name="keywords" type="text" placeholder="Enter For Search" aria-label="Search">
+		                        <input class="form-control search" required="" id="keywords" name="keywords" type="text" placeholder="Enter For Search" aria-label="Search">
 		                        <a id="spinner" href=""><i class="fa fa-spinner fa-spin"></i></a>
 		                  </div>
 		                    <div id="goiy">

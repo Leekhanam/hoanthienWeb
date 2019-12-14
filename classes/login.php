@@ -38,7 +38,7 @@
 						Session::set('login',true);
 
 					Session::set('id_tk',$value['id_tk']);
-					Session::set('image',$value['image']);
+					Session::set('image',$value['image_tk']);
 					Session::set('name',$value['name']);
 					Session::set('quyen',$value['quyen']);
 					if($a_check==1){
@@ -51,7 +51,7 @@
 					Session::set('login',true);
 
 					Session::set('id_tk',$value['id_tk']);
-					Session::set('image',$value['image']);
+					Session::set('image',$value['image_tk']);
 					Session::set('name',$value['name']);
 					Session::set('name',$value['name']);
 					if($a_check==1){
@@ -85,7 +85,7 @@
 						Session::set('login',true);
 
 					Session::set('id_tk',$value['id_tk']);
-					Session::set('image',$value['image']);
+					Session::set('image',$value['image_tk']);
 					Session::set('name',$value['name']);
 					Session::set('quyen',$value['quyen']);
 					header('Location:admin/dashboard.php');
@@ -95,7 +95,7 @@
 					Session::set('login',true);
 
 					Session::set('id_tk',$value['id_tk']);
-					Session::set('image',$value['image']);
+					Session::set('image',$value['image_tk']);
 					Session::set('name',$value['name']);
 					Session::set('name',$value['name']);
 					header('Location:index.php');

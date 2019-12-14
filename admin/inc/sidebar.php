@@ -25,6 +25,11 @@
                         <li><a href="binhluan.php">Bài học được bình luận</a> </li>
                     </ul>
                 </li>
+                <li><a class="menuitem">Lịch sử học thành viên</a>
+                    <ul class="submenu">
+                        <li><a href="lichsulist.php">Xem chi tiết</a> </li>
+                    </ul>
+                </li>
                 <?php 
                     if (Session::get("id_tk") == 1) {
                  ?>

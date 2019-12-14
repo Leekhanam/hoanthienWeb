@@ -82,7 +82,7 @@
 			}else{
 			move_uploaded_file($file_temp, $uploaded_image);
 				$query = "UPDATE taikhoan 
-				SET name='$name',image='$unique_image',email='$email'
+				SET name='$name',image_tk='$unique_image',email='$email'
 				WHERE id_tk='$id_tk'";
 				$result = $this->db->update($query);
 				if ($result) {

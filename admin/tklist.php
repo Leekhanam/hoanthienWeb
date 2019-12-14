@@ -35,7 +35,7 @@
 							<td><?php echo $i; ?></td>
 							<td><?php echo $result['name']; ?></td>
 							<td><?php echo $result['email']; ?></td>
-							<td><img width="50" src="uploads/<?php echo $result['image']; ?>"></td>
+							<td><img width="50" src="uploads/<?php echo $result['image_tk']; ?>"></td>
 							<td><?php 
 								if ($result['quyen'] == 1) {
 									?>

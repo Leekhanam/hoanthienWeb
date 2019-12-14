@@ -12,7 +12,7 @@
 				id="hdTutoForm">
 				<div class="md-form active-pink active-pink-2 mb-3 mt-0">
 					<span class="icon"><i class="fa fa-search"></i></span>
-					<input class="form-control search" value="<?php if (isset($_GET['keywords'])) {
+					<input class="form-control search" required="" value="<?php if (isset($_GET['keywords'])) {
 							$keywords = $_GET['keywords'];
 							echo $keywords;
 							} ?>" 

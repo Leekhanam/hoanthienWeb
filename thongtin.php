@@ -20,7 +20,7 @@
         id="hdTutoForm">
         <div class="md-form active-pink active-pink-2 mb-3 mt-0">
           <span class="icon"><i class="fa fa-search"></i></span>
-          <input class="form-control search" id="keywords" name="keywords" type="text" placeholder="Enter For Search" aria-label="Search">
+          <input class="form-control search" id="keywords" required="" name="keywords" type="text" placeholder="Enter For Search" aria-label="Search">
           <a id="spinner" href=""><i class="fa fa-spinner fa-spin"></i></a>
         </div>
         <div id="goiy">
@@ -48,7 +48,7 @@ if (isset($get_taikhoan)) {
          <img width="450" height="150" src="image\congnghe.png">
        </div>
        <div class="col-sm-7 img">
-         <img width="50%" src="admin/uploads/<?php echo $result['image']; ?>" align="right">
+         <img width="50%" src="admin/uploads/<?php echo $result['image_tk']; ?>" align="right">
        </div>
      </div>
    </div>

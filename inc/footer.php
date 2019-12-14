@@ -3,7 +3,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 				<div class="email text-center">
-					<img width="25%" src="image/flash.png" class="rounded-circle" align="left">
+					<img width="25%" src="./image/flash.png" class="rounded-circle" align="left">
 					<div class="form">
 						<p class="col-sm-9"> Nếu bạn muốn đóng góp cho cộng đồng tại <br /><strong>Code Club</strong> hãy gửi email cho tôi hoặc liên hệ trực tiếp với địa chỉ bên dưới!</p>
 					<form role="form" action="" method="" class="form-group">
